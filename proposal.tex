@@ -9,12 +9,12 @@
 \usepackage[vcentermath]{youngtab}
 \usepackage[all]{xy}
 \usepackage{mathtools}
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{lemma}{Lemma}[subsection]
 \newtheorem{remark}{Remark}
 \newtheorem*{theorem*}{Theorem}
 \newtheorem*{conjecture*}{Conjecture}
-\newtheorem{definition}{Definition}
+\newtheorem{definition}{Definition}[subsection]
 \setlistdepth{9}
 \renewlist{enumerate}{enumerate}{9}
 \setlist[enumerate,1]{label=\arabic*)}
@@ -253,7 +253,13 @@
 
     \subsection{Zubkov's approach}
 
-    The first non-trivial idea is using the following definition:
+    \begin{theorem*}[Zubkov, 1987]
+        Let $F$ be a free non-abelian pro-$p$ group, $\Delta$ is a pro-$p$ ring.
+        $F$ cannot be continuously embedded in $GL^1_2(\Delta)$, when $p>2$.
+    \end{theorem*}
+    \vskip 0.1in\noindent
+
+    The first non-trivial idea is to give the following definition:
     \vskip 0.1in\noindent
     \begin{definition}
         Let $F$ be a free pro-$p$ group, and $G$ be a pro-$p$ group.
@@ -266,20 +272,50 @@
     $1 + x_*, 1 + y_*$, where $x_*, y_*$ are generic matrices.
 
     This homomorphism is called a universal representation:
+    \vskip 0.1in\noindent
     \begin{theorem}
-        Each $1\neq w(X, Y)\in F$ is a pro-$p$ identity of $GL^1_d(\Delta)$ for all pro-$p$ rings $\Delta$.
+        Each $1\neq w(X, Y) \in \ker \pi$ is a pro-$p$ identity of $GL^1_d(\Delta)$ for all pro-$p$ rings $\Delta$.
     \end{theorem}
+    \vskip 0.1in\noindent
     This theorem has pretty simple proof using the standard commutative algebra approachs.
     Surprisingly, it remains to prove that
+    \vskip 0.1in\noindent
     \begin{theorem}
-        The universal representation is not injective.
+        The universal representation is not injective for $p\neq 2$.
     \end{theorem}
+    \vskip 0.1in\noindent
     Zubkov proved it by investigating the Lie algebra of generic 2-by-2 matrices by fairly long calculations.
 
     \subsection{Ben-Ezra and Zelmanov's approach}
+    \begin{theorem*}[Ben-Ezra, Zelmanov, 2020]
+        Let $F$ be a free non-abelian pro-$2$ group, $\Delta$ is a pro-$2$ ring, such that $\mathrm{char}(\Delta)=2$.
+        $F$ cannot be continuously embedded in $GL^1_2(\Delta)$.
+    \end{theorem*}
+    \vskip 0.1in\noindent
 
+    The main ideas of Ben-Ezra and Zelmanov's proof are quite similar to Zubkov's ones.
+    But they use a slightly different way to define the universal representation $\pi$.
+    They define generic matrices over $\mathbb{Z}/2\mathbb{Z}$ instead of $\mathbb{Z}_2$ as Zubkov.
+    Then the analogous theorem about the kernel of universal representation is still true (at least in the case $\mathrm{char}(\Delta)=2$):
+    \vskip 0.1in\noindent
+    \begin{theorem}
+        Each $1\neq w(X, Y) \in \ker \pi$ is a pro-$2$ identity of $GL^1_2(\Delta)$ for all pro-$2$ rings $\Delta$, such that $\mathrm{char}(\Delta)=2$.
+    \end{theorem}
+    \vskip 0.1in\noindent
 
+    Thus, the main result boils down to
+    \vskip 0.1in\noindent
+    \begin{theorem}
+        The universal representation is not injective.
+    \end{theorem}
+    \vskip 0.1in\noindent
+    This was proven using the 20 pages fairly difficult calculations.
 
+    \subsection{An extension of Ben-Ezra and Zelmanov's approach}
+    We are going to prove slightly different version of the theorem 3.2.1 for the case $\mathrm{char}(\Delta)=4$ and perhaps we will be able to do the similar thing for $\mathrm{char}(\Delta)=2^l$.
+    Then we hope that the same calculations will complete the proof.
+
+    Also, we will discuss the case $\mathrm{char}(\Delta)=0$ and how it can be investigated with aforementioned approaches.
 
     \subsection{Gelfand's conjecture}
     We are going to consider one special case of Shchigolev's result (\cite):
