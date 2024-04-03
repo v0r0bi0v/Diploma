@@ -1,0 +1,354 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[svgnames,table]{xcolor}
+\usepackage{enumitem, enumerate, changepage, enumitem, adjustbox, ragged2e, longtable, setspace, hhline, multicol, tabto, float, multirow, makecell, amsmath, amsfonts,amssymb,amsthm, gensymb, young, booktabs, array, paralist, verbatim, subfig, fancyhdr, indentfirst, misccorr, graphicx, calc, contour, ulem, tikz, epsfig, epstopdf, titling, url, array, tikz-cd, latexsym, soul, extarrows, titlesec, sectsty, expdlist}
+\usepackage{lipsum}
+\usepackage[toc,page]{appendix}
+\usepackage[hidelinks]{hyperref}
+\usepackage[vcentermath]{youngtab}
+\usepackage[all]{xy}
+\usepackage{mathtools}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{conjecture*}{Conjecture}
+\newtheorem{definition}{Definition}
+\setlistdepth{9}
+\renewlist{enumerate}{enumerate}{9}
+\setlist[enumerate,1]{label=\arabic*)}
+\setlist[enumerate,2]{label=\alph*)}
+\setlist[enumerate,3]{label=(\roman*)}
+\setlist[enumerate,4]{label=(\arabic*)}
+\setlist[enumerate,5]{label=(\Alph*)}
+\setlist[enumerate,6]{label=(\Roman*)}
+\setlist[enumerate,7]{label=\arabic*}
+\setlist[enumerate,8]{label=\alph*}
+\setlist[enumerate,9]{label=\roman*}
+
+\renewlist{itemize}{itemize}{9}
+\setlist[itemize]{label=$\cdot$}
+\setlist[itemize,1]{label=\textbullet}
+\setlist[itemize,2]{label=$\circ$}
+\setlist[itemize,3]{label=$\ast$}
+\setlist[itemize,4]{label=$\dagger$}
+\setlist[itemize,5]{label=$\triangleright$}
+\setlist[itemize,6]{label=$\bigstar$}
+\setlist[itemize,7]{label=$\blacklozenge$}
+\setlist[itemize,8]{label=$\prime$}
+
+\setlength{\topsep}{0pt}\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.3}
+
+
+\begin{document}
+    \thispagestyle{empty}
+
+%%
+%% Title page
+%%
+    \begin{center}
+    {\scshape Federal State Autonomous Educational Institution\\
+    for the Higher Education\\
+    National Research University ``Higher School of Economics''\\[1ex]
+    Faculty of Mathematics\par}
+
+        \par\vfill
+
+        \textbf{\large Vorobiov Ivan Evgenievich}
+
+        \vspace{1.5cm}
+
+        {\Large\bfseries
+        Specht Problem and Gelfand Conjecture\\
+        Проблема Шпехта и гипотеза Гельфанда
+        \par}
+
+        \vspace{1.5cm}
+
+        \textbf{\large Bachelor's thesis}
+
+
+        \vspace{1cm}
+
+        Field of study: 01.03.01 --- Mathematics,\\[1ex]
+        Degree programme: bachelor's educational programme ``Mathematics''
+
+
+        \par\vfill
+        \noindent\parbox[t]{0.48\textwidth}{%
+            Reviewer:\\[3pt]
+            academic degree\\
+            full name
+        }\hspace{0.04\textwidth}\parbox[t]{0.48\textwidth}{%
+            Scientific advisor:\\[3pt]
+            Candidate of Sciences\\
+            Anton Sergeevich Khoroshkin\\[3pt]
+%% Uncomment if needed
+            Co-advisor:\\[3pt]
+            Doctor of Sciences, professor\\
+            Alexei Yakovlevich Kanel-Belov\\
+        }%
+        \par\vfill\vfill
+        \textbf{Moscow 2024}
+    \end{center}
+    \thispagestyle{empty}
+    \pagebreak
+%%
+%% ===========================================================================
+%%
+
+    \begin{abstract}
+        Let $F$ be a free pro-$p$ non-abelian group, and let $\Delta$ be a commutative Noetherian complete local ring with maximal ideal $I$ such that
+        $\mathrm{char}(\Delta/I)=p$.\\
+        Then consider the group
+        \[GL_2^1(\Delta) = \mathrm{ker}\left( GL_2(\Delta) \xrightarrow{\Delta\to\Delta/I} GL_2(\Delta/I) \right)\]
+        A.N.\ Zubkov showed that $F$ cannot be continuously embedded in $GL_2^1(\Delta)$ for $p\neq 2$.\\
+        D.\ Ben-Ezra and E.\ Zelmanov showed that $F$ cannot be continuously embedded in $GL_2^1(\Delta)$ for $p = 2$ and $\mathrm{char}(\Delta)=2$.\\
+        In this paper we are going to prove the same result for $\mathrm{char}(\Delta)=4$.\\
+        In the second part we will investigate the connection between PI-theory and the old-standing Gelfand conjecture.
+    \end{abstract}
+
+
+    \section{Introduction}
+
+    \subsection{On non-linearity of free non-abelian pro-$p$ groups}
+    The problem of linearity of topological groups is natural and has studied for many years.
+    It is well known that discrete free groups are linear (\cite).
+    Furthermore, they can be embedded in $GL_2(\mathbb{Z})$.
+
+    So it's also quite natural to ask whether a free pro-$p$ non-abelian group is linear.
+
+    \vskip 0.1in\noindent
+    \begin{definition}
+        Commutative Noetherian complete local ring $\Delta$ with a maximal ideal $I$ is called pro-$p$ ring if $\Delta/I$ is a finite field of characteristic $p$.
+    \end{definition}
+    \vskip 0.1in\noindent
+
+    Consider the congruence subgroup:
+    \[GL_2^1(\Delta) = \mathrm{ker}\left( GL_2(\Delta) \xrightarrow{\Delta\to\Delta/I} GL_2(\Delta/I) \right)\]
+    One can see that $GL_2^1(\Delta)$ is a pro-p-group.
+    So the main conjecture of this theory can be formulated as following:
+    \vskip 0.1in\noindent
+    \begin{conjecture*}
+        Non-abelian free pro-$p$ group cannot be continuously embedded in $GL_d^1(\Delta)$ for any pro-$p$ ring $\Delta$.
+    \end{conjecture*}
+    \vskip 0.1in\noindent
+
+    There are a lot of partial results for certain $\Delta, d, p$.
+    Let us list them out.
+    \begin{itemize}
+        \item In 1987, A.N\ Zubkov showed (\cite) that for $d=2, p\neq2$ the conjecture holds true.
+        \item In 1999, using the deep results of Pink (\cite), Y.\ Barnea, M.\ Larsen (\cite) proved the conjecture for $\Delta=\left( \mathbb{Z}/p\mathbb{Z} \right)[[t]]$
+        \item In 1991, J.D.\ Dixon, A.\ Mann, M.P.F.\ du Sautoy, D.\ Segal (\cite) proved conjecture for $\Delta=\mathbb{Z}_p$, $GL_d^1(\mathbb{Z}_p)=\mathrm{ker}\left( GL_2(\mathbb{Z}_p) \xrightarrow{\mathbb{Z}_p\to\mathbb{F}_p} GL_2(\mathbb{F}_p) \right)$
+        \item In 2020, D.\ Ben-Ezra, E.\ Zelmanov showed (\cite) that for $d=2, p=2$ and $\mathrm{char}(\Delta)=2$  the conjecture holds true.
+        \item In ..., E.\ Zelmanov (\cite) announced that conjecture holds true for $p\gg d$.
+    \end{itemize}
+
+    One can see that this subject has be researched by many mathematicians.
+    So first of all we are going to give a review of their methods.
+
+    We will focus mostly on Zubkov's and Ben-Ezra, Zelmanov's methods.\\
+    Zubkov's proof based on standard approaches of commutative algebra and the idea of generic matrices.
+    Zelmanov and Ben-Ezra adopted Zubkov's method for the case $p=2$ using the trace identities which dates back to polynomial identities theory (PI-theory for short).
+
+    Additionally, we intend to extend Zelmanov and Ben-Ezra's approach for $d=2, p=2$ and $\mathrm{char}(\Delta)=4$.
+    We also hope that it will be quite easy to extend it for $\mathrm{char}(\Delta)=2^l$, and maybe even for $\mathrm{char}(\Delta)=0$.
+
+    \subsection{Gelfand conjecture}
+    In 2022 the remarkable connection between PI-theory (to be more precisely Grishin's methods) and Gelfand Conjecture stated at ICM’70 (see \cite{Gelfand}) was found.
+    \vskip 0.1in\noindent
+    \begin{conjecture*}[Gelfand]
+        The homology of the Lie subalgebra of finite codimension in the Lie algebra of algebraic vector fields on an affine algebraic manifold are finite-dimensional in each
+        homological degree.
+    \end{conjecture*}
+    \vskip 0.1in\noindent
+    This interesting connection was found during joint conversation between A.S.\ Khoroshkin, A.Ya. Kanel-Belov and with a little help of author.
+    One can find Khoroshkin's sketch in \cite{Feigin}, \cite{Centrone}.
+    Also we will use results from author's last year's coursework about finitely based $T$-spaces of commutative polynomials.
+
+
+    \section{Preliminaries}
+
+    \subsection{Profinite objects}
+    Let us remind the reader of the classical definitions of the profinite groups theory.
+    \vskip 0.1in\noindent
+    \begin{definition}
+        Inverse (projective) limit of finite groups is called a profinite group.
+        In the case of finite $p$-groups we get pro-$p$ group.
+    \end{definition}
+    \vskip 0.1in\noindent
+    It is clear that profinite groups can be equipped with the topology induced by the Tikhonov's product topology.
+
+    \vskip 0.1in\noindent
+    \begin{definition}
+        The free pro-$p$ group $F_p(X)$ is the completion of the discrete free group $F(X)$ with respect to a topology defined by all normal subgroups $N \subseteq F(X)$ whose indices are equal to the order of $p$ and which contain almost all generators of $F(X)$.
+    \end{definition}
+    \vskip 0.1in\noindent
+
+    One can define the free pro-$p$ group in a classical way using universal property in the category of pro-$p$ groups.
+
+    Also note that if $\Delta$ is a pro-$p$ ring as defined in introduction, and $I$ is a maximal ideal.
+    Then
+    \[ \Delta = \varprojlim \Delta/I^n \]
+
+    \subsection{PI-theory}
+    Now let us give some base definitions of PI-theory.
+
+    Let $k$ be a field of characteristic zero and $F = k\langle x_1,\ldots,x_i,\ldots\rangle$ be a free, countably generated, associative algebra over a field $k$ and $T$ be the endomorphism (substitution) semigroup of $F$. $X = \{ x_1,\ldots,x_i,\ldots\}$\\
+    Now let us give some classical definitions.
+
+    \vskip 0.1in\noindent
+    \begin{definition}
+        An endomorphism $\tau$ of $F$ defined by the rule $x_i \mapsto g_i, g_i \in F$, is called a substitution of type
+        $(x_1,\ldots,x_i,\ldots) \mapsto (g_1,\ldots,g_i,\ldots)$.
+    \end{definition}
+    \vskip 0.1in\noindent
+
+    \vskip 0.1in\noindent
+    \begin{definition}
+        $T$-space in $F$ is a vector subspace of $F$, that is closed under substitutions.
+    \end{definition}
+    \vskip 0.1in\noindent
+
+    \vskip 0.1in\noindent
+    \begin{definition}
+        $T$-ideal in $F$ is an ideal of F that is at the same time a $T$-space.
+    \end{definition}
+    \vskip 0.1in\noindent
+
+    \vskip 0.1in\noindent
+    \begin{definition}
+        We say that $T$-space $M$ is finitely based if there is a finite subset $B\subset M$ such that T-space generated by $B$ coincides with $M$.
+    \end{definition}
+    \vskip 0.1in\noindent
+
+    During the 1980s, A.R.\ Kemer's resolution of Specht problem was a significant breakthrough in the PI-theory (\cite{Kemer}, see also simplified version of Kemer's proof in \cite{SimpleKemer}, \cite{Procesi}):
+
+    Here is a well known reformulation of Kemer's theorem:
+
+    \vskip 0.1in\noindent
+    \begin{theorem*}
+        Any $T$-ideal of the algebra $F$ is finitely based.
+    \end{theorem*}
+    \vskip 0.1in\noindent
+
+    It's natural to ask the same question for $T$-spaces.
+
+    In 2001, V.V. Shchigolev combined Grishin (\cite) and Kanel-Belov's (\cite) methods.
+    Then Shchigolev noticed that methods similar to Kemer's can be applied to localisation of Specht problem for the T-spaces.
+    And finally he proved (\cite{Shchigolev}):
+
+    \vskip 0.1in\noindent
+    \begin{theorem*} [V.V. Shchigolev, 2001]
+        Any $T$-space of the algebra F is finitely based.
+    \end{theorem*}
+    \vskip 0.1in\noindent
+
+    We will use one simple special case of Shchigolev's theorem, which was also proven in author's last year's coursework.
+
+
+    \section{Main results}
+
+    \subsection{Zubkov's approach}
+    The first non-trivial idea is using the following definition:
+    \vskip 0.1in\noindent
+    \begin{definition}
+        Let $F$ be a free pro-$p$ group, and $G$ be a pro-$p$ group.
+        Then every $1\neq w\in F$ such that $w\in Ker(\varphi)$ for all continuous homomorphisms $\varphi: F\to G$ is called a pro-$p$ identity of G.
+    \end{definition}
+    \vskip 0.1in\noindent
+
+
+    \subsection{Ben-Ezra and Zelmanov's approach}
+
+
+
+    \subsection{Gelfand's conjecture}
+    We are going to consider one special case of Shchigolev's result (\cite):
+    \vskip 0.1in\noindent
+    \begin{theorem}
+        Any  $T$-space in algebra $k[x_1,\ldots,x_n]$ is finitely based.
+    \end{theorem}
+    \vskip 0.1in\noindent
+
+    Then we will discuss Gelfand's conjecture.
+
+    \vskip 0.1in\noindent
+    \begin{conjecture*}
+        The homology of the Lie subalgebra of finite codimension in the Lie algebra of algebraic vector fields on an affine algebraic manifold are finite-dimensional in each
+        homological degree.
+    \end{conjecture*}
+    \vskip 0.1in\noindent
+
+
+    We denote by $\mathcal{W}_n$ the Lie algebra of formal vector fields on an n-dimensional plane $V$.\\
+    Well known that
+    \[\mathcal{W}_n\simeq \prod\limits_{k=0}^{\infty}S^k V\otimes V^*\]
+    The subalgebras $\prod\limits_{k=d}^{\infty}S^k V\otimes V^*$ of a finite codimension are denoted by $L_d(n)$.
+    Using the classical considerations of homological algebra (which will be omitted), one can reduce Gelfand's conjecture to the following lemma
+    \vskip 0.1in\noindent
+    \begin{lemma}
+        Any finitely generated $L_d(n)$-module is Noetherian.
+    \end{lemma}
+    \vskip 0.1in\noindent
+
+    Finally, we will notice that the methods from the theorem ... can be applied to prove this lemma.
+
+
+
+    \begin{thebibliography}{10}
+
+        \bibitem{Kemer} {\sl A. Kemer}, {\it Finite basability of identities of associative algebras}, Algebra i Logika 26(5) (1987), 597-641, 650.
+
+        \bibitem{SimpleKemer} {\sl Eli Aljadeff, Alexei Kanel-Belov, Yaakov Karasik}, {\it Kemer’s theorem for affine PI algebras over a field of characteristic zero}, Journal of Pure and Applied Algebra 220, No. 8, 2771--2808 (2016).
+
+        \bibitem{Procesi} {\sl C. Procesi}, {\it “The geometry of polynomial identities”}, Izv. Math., 80:5 (2016), 910–953.
+
+        \bibitem{GrishinSchigolev} {\sl Grishin, A. V.; Shchigolev, V. V.}, {\it $T$-spaces and their applications.} (English. Russian original) J. Math. Sci., New York 134, No. 1, 1799--1878 (2006); translation from Sovrem. Mat. Prilozh. 18, 26--97 (2004).
+
+        \bibitem{Grishin} {\sl A. V. Grishin}, {\it On the finite-basis property for systems of generalized polynomials}, Izv. Akad. Nauk
+        SSSR, Ser. Mat., 37, No. 2, 243–272 (1991).
+
+        \bibitem{Grishin2} {\sl A. V. Grishin}, {\it “On finitely based systems of generalized polynomials”, Math. USSR-Izv.}, 37:2 (1991), 243–272
+
+        \bibitem{Shchigolev} {\sl V. V. Shchigolev}, {\it Finite-basis property of T-spaces over fields of characteristic zero,} Izv. Ross.
+        Akad. Nauk, Ser. Mat., 65, No. 5, 1041–1071 (2001).
+
+        \bibitem{BelovAljadeff} {\sl Kanel–Belov A., Eli Aljadeff}, {\it Representability and Specht problem for $G$-graded algebras}, Advances in Math., 225:5 (2010), 2391--2428 , arXiv: 0903.0362.
+
+
+        \bibitem{Lie} {\sl I. I. Benediktovich, A. E. Zalesskii}, {\it T-ideals of free Lie algebras with polynomial growth of a sequence of codimensions} (Russian), Vestsi Akad. Navuk BSSR Ser. Fiz-Math. Navuk 3 (1980), 5-10; translation: Proceedings of the National
+        Academy of Sciences of Belarus. Series of Physical-Mathematical Sciences 3(3) (1980).
+
+        \bibitem{Jordan} {\sl A. Ja. Vais, E. I. Zelmanov}, {\it Kemer’s theorem for finitely generated Jordan algebras} (Russian), Izv. Vyssh. Uchebn. Zved.
+        Mat. 33(6) (1989), 42-51; translation: Soviet Math. (Iz. VUZ) 33(6) (1989), 38-47.
+
+        \bibitem{Super} {\sl L. Centrone, A. Estrada, A. Ioppolo}, {\it On PI-algebras with additional structures: rationality of Hilbert series and Specht’s
+        problem}, J. Algebra 592 (2022), 300-356.
+
+        \bibitem{ConterKanel} {\sl A. Ya. Belov}, {\it Counterexamples to the Specht problem} (Russian), Sb. Math. 191(3) (2000), 13-24; translation: Sb. math.
+        131 (3-4) (2000), 329-340.
+
+        \bibitem{ConterGrishin} {\sl A. V. Grishin}, {\it Examples of T-spaces and T-ideals over a field of characteristic 2 without the finite basis property}, Fundam.
+        Prikl. Mat. 5(1) (1999), 101-118.
+
+        \bibitem{ConterShchigolev} {\sl V. V. Shchigolev}, {\it Examples of infinitely based T-ideals}, Fundam. Prikl. Mat. 5(1) (1999), 307-312.
+
+        \bibitem{GradedKanel} {\sl E. Aljadeff, A. Kanel-Belov}, {\it Representability and Specht problem for G-graded algebras}, Adv. Math. 225(5) (2010), 2391-
+        2428.
+
+        \bibitem{GradedSviridova} {\sl I. Sviridova}, {\it Identities of pi-algebras graded by a finite abelian group}, Comm. Algebra 39(9) (2011), 3462–3490.
+
+        \bibitem{Gelfand} {\sl I. M. Gelfand}, {\it The cohomology of infinite dimensional Lie algebras; Some questions of integral geometry}, Proceedings of
+        ICM 1970-Nice, T.1 pp.95-111.
+
+        \bibitem{Centrone} {\sl Lucio Centrone, Alexei Kanel-Belov, Anton Khoroshkin, and Ivan Evgenievich Vorobiev}, {\it Specht property for systems of commutative polynomials and Gelfand conjecture},
+
+        \bibitem{Feigin} {\sl Boris Feigin, Alexei Kanel-Belov, Anton Khoroshkin}, {\it On finite dimensionality of homology of subalgebras of vector
+        fields}, arXiv:2211.08510v1
+
+    \end{thebibliography}
+
+\end{document}
