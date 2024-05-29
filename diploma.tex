@@ -12,6 +12,8 @@
 \usepackage{bm}
 \usepackage{mathrsfs}
 \usepackage{mathtools}
+\usepackage{tikz-cd}
+
 
 \usepackage{floatrow,graphicx,calc}
 
@@ -28,6 +30,13 @@
 \newcommand{\R}{\ensuremath{\mathbb{R}}}
 \newcommand{\Z}{\ensuremath{\mathbb{Z}}}
 \newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\LQ}{\ensuremath{\mathcal{L}_{\mathbb{Q}_p}}}
+\newcommand{\LZ}{\ensuremath{\mathcal{L}_{\mathbb{Z}_p}}}
+\newcommand{\LQn}{\ensuremath{\mathcal{L}^{(n)}_{\mathbb{Q}_p}}}
+\newcommand{\LZn}{\ensuremath{\mathcal{L}^{(n)}_{\mathbb{Z}_p}}}
+\newcommand{\Sbf}{\ensuremath{\mathbf{S}}}
+\newcommand{\rank}{\ensuremath{\mathrm{rank}}}
+
 
 
 
@@ -189,7 +198,7 @@
 
     Сейчас опишем общий план доказательства, он отчасти реализован для произвольных размеров матриц в\ \cite{Zelmanov1},\ \cite{Zelmanov2}:
 
-    Первое, что нужно сделать ~--- сузить множество рассматриваемых колец.
+    Для начала сузим множество рассматриваемых колец.
     Можно построить, так называемое, универсальное представление в общие матрицы.
     Оказывается, что классическими алгебраическими рассуждениями можно показать, что если какое-то представление точно, то и это универсальное представление точно.
 
@@ -212,7 +221,6 @@
 
     \section{О нелинейности свободных про-$p$ групп}
     Для начала необходимо привести полные доказательства Зубкова и Бен-Эзры-Зельманова.
-    В некоторых местах они полностью соответствует авторским, а в некоторых ~--- упрощены.
 
     \subsection{Подход Зубкова}
     \begin{theorem}[Зубков, 1989]
@@ -315,21 +323,111 @@
 
     \vskip 0.1in\noindent
     \begin{theorem}[Зубков, 1987]
-        Если существует инъективный непрерывный гомоморфизм $F\to GL^1_2(\Delta)$ для некоторого про-$p$ кольца $\Delta$, то и универсальное представление инъективно.
+        Пусть $F$ ~--- свободная про-$p$ группа порожденная $x, y$.
+        Если существует инъективный непрерывный гомоморфизм $\varphi: F \to GL^1_2(\Delta)$, то и универсальное представление $\pi$ инъективно.
     \end{theorem}
     \begin{proof}
         Напомним
         \[
             GL^1_2(\Delta) = \ker{(GL(\Delta \to \Delta / I))}
         \]
-        Пусть $F$ ~--- про-$p$ группа с двумя (топологически) образующими $x, y$ и существует инъективный непрерывный $\phi: F \to GL^1_2(\Delta)$.
-        Рассмотрим образы $x, y$
+
+        Рассмотрим образы $x, y$:
+        \[
+            \varphi(x) = 1 + A, \quad
+            \varphi(y) = 1 + B
+        \]
+        Заметим, что
+        \[
+            A, B \in \ker{(M_2(\Delta)\to M_2(\delta/I))}
+        \]
+        так как $1 + A, 1 + B \in \ker{(GL(\Delta \to \Delta / I))}$.
+        Пусть
+        \[
+            A=
+            \begin{pmatrix}
+                a_{1,1} & a_{1,2} \\
+                a_{2,1} & a_{2,2}
+            \end{pmatrix},
+            \quad
+            B=
+            \begin{pmatrix}
+                b_{1,1} & b_{1,2} \\
+                b_{2,1} & b_{2,2}
+            \end{pmatrix}
+        \]
+        Ясно, что $\lim a_{i,j}^n = \lim b_{i,j}^n = 0$.
+        Тогда можно построить гомоморфизм $\zeta: x_{i,j} \mapsto a_{i,j}, y_{i,j} \mapsto b_{i,j}$, он индуцирует эпиморфизм
+        $\hat{\zeta}: G \to \mathrm{Im}\hspace{0.1cm}{\varphi}$.
+        Наконец получаем коммутативную диаграмму
+        \begin{center}
+            \begin{tikzcd}
+                & F \arrow[dl, "\pi"'] \arrow[dr] & \\
+                G \arrow{rr} & & GL_2^1(\Delta)
+            \end{tikzcd}
+        \end{center}
+        Следовательно:
+        \[
+            \ker{\pi} \subseteq \ker{\varphi}
+        \]
+
+    \end{proof}
+
+    \subsubsection{Неточность универсального представления}
+    Введем обозначения:
+    \begin{itemize}
+        \item $\mathbf{S}$ ~--- кольцо степенных рядов от общих матриц над $\Z_p$
+        \item $\LQ$ ~--- алгебра Ли порожденная общими матрицами $X, Y$ над $\Q_p$
+        \item $\LZ$ ~--- алгебра Ли порожденная общими матрицами $X, Y$ над $\Z_p$
+        \item $\LQ^{(n)}$ ~--- векторное пространство над $\Q_p$ однородных элементов степени $n$ в алгебре $\LQ$.
+        \item $\LZ^{(n)}$ ~---  $\Z_p$-модуль однородных элементов степени $n$ в алгебре $\LZ$.
+        \item Для $g\in G$: $\min{g}$ ~--- однородная компонента наименьшей ненулевой степени (можно записать $g=1 + a_n + a_{n+1} + \ldots$)
+    \end{itemize}
+    Приведем сначала план доказательства, чтобы была понятна мотивация каждой леммы:
+    \begin{enumerate}
+        \item Определим $G\supseteq G_n$, вложенную последовательность нормальных подгрупп попадающую в любую окрестность единицы, такую что для любого $g\in G_n$
+        \[
+            \min{g} \in \LQn\cap\Sbf = \LZn
+        \]
+        \item Таким образом, можно изучать $G_n/G_{n+1}$ как $\Z_p$-модуль $\LZn$.
+        Докажем, что $\rank_{\Z_p}{\LZn} = f(n)$ для некоторой $f$.
+        \item Доказав, что $G_n$ ~--- нижний центральный ряд $G$ получим противоречие с формулой Витта (см. \cite{Lubotzky}):
+        \begin{proposition}[Витт, \cite{Lubotzky}]
+            Пусть F ~--- свободная про-$p$ группа порожденная $m$ образующими, тогда $n$-ый фактор нижнего центрального ряда имеет ранг (как $\Z_p$-модуль)
+            \[
+                \frac{1}{n}\sum\limits_{d\mid n} \mu(d) m^{n / d}
+            \]
+            где $\mu$ ~--- функция Мебиуса.
+        \end{proposition}
+    \end{enumerate}
+    Итак, докажем следующее техническое утверждение:
+    \vskip 0.1in\noindent
+    \begin{proposition}
+        При $p\neq 2$:
+        \[
+            \LQn \cap \Sbf = \LZn
+        \]
+    \end{proposition}
+    \begin{remark}
+        Данное предложение не верно для $p=2$, что влечет существенные сложности, возникающие для $p=2$.
+    \end{remark}
+    \begin{proof}
 
     \end{proof}
 
 
 
 
+
+
+
+
+
+
+    Итак, пусть
+    \[
+        G_n = G \cap \ker{(GL(S) \to GL(S / S_n))}
+    \]
 
     \printbibliography
 \end{document}
