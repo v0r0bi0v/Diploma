@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Переменная с именем файла без расширения
+FILENAME="diploma"
+
+pdflatex -interaction=nonstopmode $FILENAME.tex
+biber $FILENAME
+pdflatex -interaction=nonstopmode $FILENAME.tex
+pdflatex -interaction=nonstopmode $FILENAME.tex
+
+rm -f $FILENAME.aux $FILENAME.log $FILENAME.out $FILENAME.bbl $FILENAME.blg $FILENAME.bcf $FILENAME.run.xml $FILENAME.toc
