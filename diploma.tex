@@ -178,7 +178,7 @@
         \Delta \cong \varprojlim \Delta/I^n
     \]
 
-    Рассмотрим конгуренц-подгруппу:
+    Рассмотрим конгруенц-подгруппу:
     \[
         GL_d^1(\Delta) = \mathrm{ker}\left( GL_d(\Delta) \xrightarrow{\Delta\to\Delta/I} GL_d(\Delta/I) \right)
     \]
@@ -232,7 +232,8 @@
     Для начала необходимо привести полные доказательства Зубкова и Бен-Эзры-Зельманова.
 
     \subsection{Подход Зубкова}
-    \begin{theorem}[Зубков, 1989]\label{thm:Zubkov-main}
+    \begin{theorem}[Зубков, 1989]
+        \label{thm:Zubkov-main}
         Некоммутативная свободная про-$p$ группа не может быть непрерывно вложена в $GL^1_2(\Delta)$ для $p\neq 2$.
     \end{theorem}
 
@@ -402,7 +403,8 @@
         \item Таким образом, можно изучать $G^{(n)}/G^{(n+1)}$ как $\Z_p$-модуль $\LZn$.
         Докажем, что $\rank_{\Z_p}{\LZn} = f(n)$ для некоторой $f$.
         \item Доказав, что $G^{(n)}$ ~--- нижний центральный ряд $G$ получим противоречие с формулой Витта (см. \cite{Lubotzky}):
-        \begin{proposition}[Витт, \cite{Lubotzky}]\label{thm:Vitt}
+        \begin{proposition}[Витт, \cite{Lubotzky}]
+            \label{thm:Vitt}
             Пусть F ~--- свободная про-$p$ группа порожденная $m$ образующими, тогда $n$-ый фактор нижнего центрального ряда имеет ранг (как $\Z_p$-модуль)
             \[
                 \frac{1}{n}\sum\limits_{d\mid n} \mu(d) m^{n / d}
@@ -412,7 +414,8 @@
     \end{enumerate}
     Итак, докажем следующее техническое утверждение:
     \vskip 0.1in\noindent
-    \begin{proposition}\label{thm:LQn-to-LZn}
+    \begin{proposition}
+        \label{thm:LQn-to-LZn}
         При $p\neq 2$:
         \[
             \LQn \cap \Sbf = \LZn
@@ -477,7 +480,8 @@
     \end{proof}
 
     Сразу же получаем следствие
-    \begin{colloraly}\label{thm:LZn-rank}
+    \begin{colloraly}
+        \label{thm:LZn-rank}
         \[
             rank_{\Z_p} \LZn = \dim_{\Q_p} \LQn =
             \begin{cases}
@@ -505,22 +509,21 @@
         $\min g \in \LQn$.
 
 
-
-
-
-
-
-
     \end{proof}
 
     Пусть $G=G_1,\ldots,G_n,\ldots$ ~--- нижний центральный ряд.
 
     Следующее предложение завершает доказательство теоремы~\ref{thm:Zubkov-main}
     \begin{proposition}
-        $G_n = G^{(n)}$
+        Нижний центральный ряд совпадает с пересечениями группы $G$ с конгруенц-подгруппами по идеалу $S_n$.
+        \[
+            G_n = G^{(n)}
+        \]
     \end{proposition}
+    \begin{proof}
+        
+    \end{proof}
 
 
-
-        \printbibliography
-    \end{document}
+    \printbibliography
+\end{document}
