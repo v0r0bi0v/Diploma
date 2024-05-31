@@ -3,10 +3,10 @@
 # name of the file
 FILENAME="diploma"
 
-# compile once
+# compile.sh once
 pdflatex -interaction=nonstopmode $FILENAME.tex
 biber $FILENAME
-# compile twice for correct bibliography
+# compile.sh twice for correct bibliography
 pdflatex -interaction=nonstopmode $FILENAME.tex
 pdflatex -interaction=nonstopmode $FILENAME.tex
 
