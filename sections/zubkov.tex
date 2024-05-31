@@ -163,13 +163,14 @@
     \item Будем записывать коммутатор веса $n$ следующим образом $[l_1, \ldots, l_n] = [[l_1, l_2, \ldots, l_{n-1}], l_n]$
 \end{itemize}
 
-\begin{remark}\label{rmk:G_n-contains-L_n}
+\begin{remark}\label{rmk:group-vs-lie-commutator}
     Полезно заметить, что
     \begin{gather*}
         \min{(1 + X)(1+Y)} = X + Y\\
         \min{(1 + X)(1+Y)(1+X)^{-1}(1+Y)^{-1}} = [X, Y]\\
     \end{gather*}
 \end{remark}
+
 Приведем сначала план доказательства, чтобы была понятна мотивация каждой леммы:
 \begin{enumerate}
     \item Определим $G\supseteq G^{(n)}$, вложенную последовательность нормальных подгрупп попадающую в любую окрестность единицы, такую что для любого $g\in G^{(n)}$
@@ -287,6 +288,13 @@
 \end{proof}
 
 Пусть $G=G_1,\ldots,G_n,\ldots$ ~--- нижний центральный ряд.
+
+Аналогично замечанию~\ref{rmk:group-vs-lie-commutator} получаем следующее тривиальное предложение.
+\begin{proposition}\label{prp:G_n-contains-L_n}
+    \[
+        \min F_n \supseteq \LZn
+    \]
+\end{proposition}
 
 Следующее предложение завершает доказательство теоремы~\ref{thm:Zubkov-main}
 \begin{proposition}
