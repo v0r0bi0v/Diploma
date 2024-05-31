@@ -257,7 +257,7 @@
 
     В 2022 была обнаружена замечательная связь между PI-теорией (точнее методами Гришина) и гипотезой Гельфанда сформулированной на ICM’70 (см\ \cite{Gelfand}).
     \vskip 0.1in\noindent
-    \begin{conjecture}[Гельфанд, 1970]
+    \begin{conjecture}[Гельфанд, 1970]\label{Gelfand}
         Гомологии подалгебры Ли конечной коразмерности алгебры Ли алгебраических векторных полей на афинном алгебраическом многообразии конечномерны.
     \end{conjecture}
     \vskip 0.1in\noindent
@@ -817,12 +817,10 @@
     \]
     Пусть $V_{\lambda}$ ~--- произвольное неприводимое представление $\mathcal{gl}_n$, ему соответствует $\L_0(n)$-модуль $V_{\lambda}$ и тривиальное действие на подалгебре $\L_1(n)\subset\L_0(n)$.
     Обозначим индуцированный и коиндуцированный модули:
-    \[
-        T_{\lambda} = \mathrm{Ind}^{\Wn}_{\L_0(n)} V_{\lambda}
-    \]
-    \[
-        \mathcal{T}_{\lambda} = \mathrm{CoInd}^{\Wn}_{\L_0(n)} V_{\lambda}
-    \]
+    \begin{gather*}
+        T_{\lambda} = \mathrm{Ind}^{\Wn}_{\L_0(n)} V_{\lambda} =  U(\mathcal{W}_n^{pol}) \otimes_{U(L_0(n))} V_{\lambda} \simeq \bigoplus_{k=0}^{\infty} S^k V^* \otimes V_{\lambda} \\
+        \mathcal{T}_{\lambda} = \mathrm{CoInd}^{\Wn}_{\L_0(n)} V_{\lambda} = \operatorname{Hom}_{U(L_0(n))}(U(\mathcal{W}_n), V_{\lambda}) \simeq \bigoplus_{k=0}^{\infty} S^k V \otimes V_{\lambda}\\
+    \end{gather*}
 
 
 
