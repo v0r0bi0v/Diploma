@@ -163,7 +163,8 @@
     \item Будем записывать коммутатор веса $n$ следующим образом $[l_1, \ldots, l_n] = [[l_1, l_2, \ldots, l_{n-1}], l_n]$
 \end{itemize}
 
-\begin{remark}\label{rmk:group-vs-lie-commutator}
+\begin{remark}
+    \label{rmk:group-vs-lie-commutator}
     Полезно заметить, что
     \begin{gather*}
         \min{(1 + X)(1+Y)} = X + Y\\
@@ -281,16 +282,26 @@
     \]
 \end{lemma}
 \begin{proof}
-    В силу предложения~\ref{thm:LQn-to-LZn} достаточно доказать, что
-    $\min g \in \LQn$.
+    В силу предложения~\ref{thm:LQn-to-LZn} достаточно доказать, что $\min g \in \LQn$.
+
+    Введем обозначения.
+    Аналогично предыдущему параграфу $\SQ$ ~--- алгебра формальных степенных рядов от переменных $x_{i,j}, y_{i,j}$ над $\Q$, $\SQn$ ~--- идеалы конечного индекса.
+
+    Зафиксируем произвольное $r>n$, чтобы работать в алгебре $M_2(\SQo) / M_2(\SQr)$ и общие матрицы были нильпотентны.
+    Таким образом можем ввести стандартное экспоненциальное отображение:
+
+    \begin{gather*}
+        \exp X \mapsto \sum\limits_{k=0}^{\infty} X^k / k!\\
+        \exp: M_2(\SQo) / M_2(\SQr) \to 1 + M_2(\SQo) / M_2(\SQr)
+    \end{gather*}
 
 
 \end{proof}
 
 Пусть $G=G_1,\ldots,G_n,\ldots$ ~--- нижний центральный ряд.
-
 Аналогично замечанию~\ref{rmk:group-vs-lie-commutator} получаем следующее тривиальное предложение.
-\begin{proposition}\label{prp:G_n-contains-L_n}
+\begin{proposition}
+    \label{prp:G_n-contains-L_n}
     \[
         \min F_n \supseteq \LZn
     \]
