@@ -1,0 +1,35 @@
+Пусть $\Wn$ ~--- алгебра Ли формальных векторных полей, и $\Wpn$ ~--- алгебра Ли полиномиальных векторных полей.
+Хорошо известно, что
+\[
+    \Wn \cong \prod\limits_{k=0}^{\infty} S^k V\otimes V^*, \quad \Wpn \cong \bigoplus\limits_{k=0}^{\infty} S^k V\otimes V^*
+\]
+Обозначим подалгебры конечного индекса:
+\[
+    \L_d(n) = \prod\limits_{k=d}^{\infty} S^k V\otimes V^*, \quad \Lp_d(n) = \bigoplus\limits_{k=d}^{\infty} S^k V\otimes V^*
+\]
+Пусть $V_{\lambda}$ ~--- произвольное неприводимое представление $\mathcal{gl}_n$, ему соответствует $\L_0(n)$-модуль $V_{\lambda}$ и тривиальное действие на подалгебре $\L_1(n)\subset\L_0(n)$.
+Обозначим индуцированный и коиндуцированный $\Wn$- и $\Wpn$- модули:
+\begin{gather*}
+    T_{\lambda} = \mathrm{Ind}^{\Wn}_{\L_0(n)} V_{\lambda} =  U(\mathcal{W}_n^{pol}) \otimes_{U(L_0(n))} V_{\lambda} \cong \bigoplus_{k=0}^{\infty} S^k V^* \otimes V_{\lambda} \\
+    \mathcal{T}_{\lambda} = \mathrm{CoInd}^{\Wn}_{\L_0(n)} V_{\lambda} = \operatorname{Hom}_{U(L_0(n))}(U(\mathcal{W}_n), V_{\lambda}) \cong \bigoplus_{k=0}^{\infty} S^k V \otimes V_{\lambda}
+\end{gather*}
+
+Методами гомологической алгебры (которые здесь будут опущены, см.\ одну из классических монографий~\cite{Fuks}) можно свести гипотезу Гельфанда~\ref{Gelfand} к
+
+\vskip 0.1in\noindent
+\begin{conjecture}
+    Модуль $\mathcal{T}_{\lambda_1}\otimes\ldots\otimes\mathcal{T}_{\lambda_r}$ нетеров как $\L_d(n)$-модуль.
+\end{conjecture}
+\vskip 0.1in\noindent
+
+Оказывается, что для $\lambda_i=0, n=1$ данная гипотеза уже весьма нетривиальна.
+В дополнение в~\cite{Feigin-Kanel-Khoroshkin} А.С.\ Хорошкин привел набросок доказательства общего случая во многом соответсвующий случаю $\mathcal{T}_{0}\otimes\ldots\otimes\mathcal{T}_{0}$.
+
+Наконец, случай $\lambda_i=0, n=1$ соответствует $\L_1(n)$-нетеровости $\mathbb{F}[x_1, \ldots, x_n]$.
+А $\L_1$-нетеровость ~--- конечная базируемость относительно подстановок вида:
+\[
+    x \mapsto x + \varepsilon p(x)
+\]
+для $\varepsilon\to 0$
+
+Остается заметить, что это и есть ключевая подстановка~\ref{key_sub} из доказательства теоремы~\ref{main}.
