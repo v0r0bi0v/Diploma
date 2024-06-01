@@ -308,7 +308,7 @@
     Тогда\\
     \begin{multline*}
         H^{(n)} = H\cap (1 + M_2(\SQn) / M_2(\SQr)) = \exp{\left( \LQ/\LQcentralr \cap M_2(S_n)/M_2(S_r) \right)} = \\
-        \exp{(\Lqn \oplus \ldots \oplus \LQ_{r-1})}
+        \exp{(\LQn \oplus \ldots \oplus \LQ_{r-1})}
     \end{multline*}\\
     Пусть $\varphi$ ~--- отображение факторизации $M_2(\SQ)\to M_2(\SQ)/M_2(\SQr)$.
     Таким образом, для каждого элемента $h \in H^{(n)}$, минимум $\min h$ представляется в виде коммутатора веса $n$ от $A=\varphi(X), B=\varphi(Y)$.
@@ -326,7 +326,7 @@
             y_{2,1} + y_{2,1}^* & y_{2,2} + y_{2,2}^*
         \end{pmatrix}\\
     \end{gather*}
-    где $x_{i,j}, y_{i,j} \in S_{\mathbb{Q}, 2}$.
+    где $x_{i,j}, y_{i,j} \in S_{\mathbb{Q}, 2}$.\\
     Заметим, что
     \begin{gather*}
         \log(1 + A) = \varphi
@@ -341,6 +341,10 @@
         \end{pmatrix}\\
     \end{gather*}
 
+    Наконец зададим $\tau: x_{i,j}\mapsto x_{i,j} + x_{i,j}^*, \tau: y_{i,j}\mapsto y_{i,j} + y_{i,j}^*$, продолжим его до автоморфизма $\overline{\psi}$ алгебры
+    $M_2(\SQ)/M_2(\SQr)$.
+    Очевидно, что $\tau(\SQr)=\SQr$.
+    Следовательно, он индуцирует $\hat{\tau}$ ~--- автоморфизм группы $H^{(n)}$.
 
 
 \end{proof}
