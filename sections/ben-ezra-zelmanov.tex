@@ -31,7 +31,33 @@
     Если существует инъективный непрерывный гомоморфизм $\varphi: F \to GL^1_2(\Delta)$ для про-$2$ кольца $\Delta$ характеристики 2, то и универсальное представление $\pi$ инъективно.
 \end{theorem}
 \begin{proof}
-    Доказательство аналогично теореме\ref{thm:Zubkov-universal}
+    Доказательство аналогично теореме\ref{thm:zubkov-universal} основано на универсальности общих матриц.
+
+    Пусть $\sigma: F\to GL_2^1(\Delta)$.
+    \[
+        \sigma x \mapsto 1 +
+        \begin{pmatrix}
+            a_{1,1} & a_{1,2} \\
+            a_{2,1} & a_{2,2}
+        \end{pmatrix}, \quad
+        \sigma y \mapsto 1 +
+        \begin{pmatrix}
+            b_{1,1} & b_{1,2} \\
+            b_{2,1} & b_{2,2}
+        \end{pmatrix},
+    \]
+    Тогда, пользуясь тем, что $\char \Delta = 2$ определим отображение $\zeta: x_{i,j}\mapsto a_{i,j}$, которое все так же индуцирует эпиморфизм $\hat{\zeta}: G \to \mathrm{Im}\hspace{0.1cm}{\varphi}$.
+    И диаграмма коммутативна
+    \begin{center}
+        \begin{tikzcd}
+            & F\arrow{dl}{\pi} \arrow{dr}{\varphi} & \\
+            G\arrow{rr}{\hat{\zeta}} & & GL_2^1(\Delta)
+        \end{tikzcd}
+    \end{center}
+    Следовательно:
+    \[
+        \ker{\pi} \subseteq \ker{\varphi} \qedhere
+    \]
 \end{proof}
 
 \subsection{Набросок доказательства}\label{subsec:ben-ezra-zelmanov-non-injective}
