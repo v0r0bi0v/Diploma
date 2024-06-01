@@ -307,8 +307,8 @@
     $H$ ~--- подгруппа $M_2(\SQo) / M_2(\SQr)$.
     Тогда\\
     \begin{multline*}
-        H^{(n)} = H\cap (1 + M_2(\SQn) / M_2(\SQr)) = \exp{\left( \LQ/\LQcentralr \cap M_2(S_n)/M_2(S_r) \right)} = \\
-        \exp{(\LQn \oplus \ldots \oplus \LQ_{r-1})}
+        H^{(n)} = H\cap (1 + M_2(\SQn) / M_2(\SQr)) = \\
+        \exp{\left( \LQ/\LQcentralr \cap M_2(S_n)/M_2(S_r) \right)}= \exp{(\LQn \oplus \ldots \oplus \LQ_{r-1})}
     \end{multline*}\\
     Пусть $\varphi$ ~--- отображение факторизации $M_2(\SQ)\to M_2(\SQ)/M_2(\SQr)$.
     Таким образом, для каждого элемента $h \in H^{(n)}$, минимум $\min h$ представляется в виде коммутатора веса $n$ от $A=\varphi(X), B=\varphi(Y)$.
@@ -341,11 +341,28 @@
         \end{pmatrix}\\
     \end{gather*}
 
-    Наконец зададим $\tau: x_{i,j}\mapsto x_{i,j} + x_{i,j}^*, \tau: y_{i,j}\mapsto y_{i,j} + y_{i,j}^*$, продолжим его до автоморфизма $\overline{\psi}$ алгебры
-    $M_2(\SQ)/M_2(\SQr)$.
-    Очевидно, что $\tau(\SQr)=\SQr$.
-    Следовательно, он индуцирует $\hat{\tau}$ ~--- автоморфизм группы $H^{(n)}$.
+    Введем $\tau: x_{i,j}\mapsto x_{i,j} + x_{i,j}^*, \tau: y_{i,j}\mapsto y_{i,j} + y_{i,j}^*$, продолжим его до автоморфизма $\overline{\psi}$ алгебры
+    $M_2(\SQ)/M_2(\SQr)$.\\
+    Заметим, что
+    \[
+        \overline{\tau}(H^{(n)}) = \tau(H)\cap M_2(\SQ)/M_2(\SQr)
+    \]
+    так как $\tau(\SQr) = \SQr$
+    С другой стороны для каждого элемента $h\in H^{(n)}$:
+    \[
+        \min \overline{\tau}(h) = \min h
+    \]
+    Следовательно, элементы из $\overline{\tau}(H)\cap M_2(\SQ)/M_2(\SQr)$ тоже представляются в требуемом виде.
 
+    Кроме того $\exp{(A)}, \exp{(B)} \in H$, значит $\overline{\tau}(\exp{(A)}), \overline{\tau}(\exp{(B)}) \in \overline{\tau}(H)$.
+    И по построению $\overline{\tau}$:
+    \begin{gather*}
+        \overline{\tau}(\exp{(A)}) = 1 + A = 1 + \varphi(X) \in \overline{\tau}(H)\\
+        \overline{\tau}(\exp{(B)}) = 1 + B = 1 + \varphi(Y) \in \overline{\tau}(H)
+    \end{gather*}
+
+    Наконец получаем, что $\iverline{\tau}(H)$ содержит группу, порожденную $1 + \varphi(X), 1 + \varphi(Y)$, а значит содержит и $G/G^{(r)}$.
+    И так как мы выбирали $r > n$ получаем требуемое.
 
 \end{proof}
 
@@ -354,7 +371,7 @@
 \begin{proposition}
     \label{prp:G_n-contains-L_n}
     \[
-        \min F_n \supseteq \LZn
+        \min G_n \supseteq \LZn
     \]
 \end{proposition}
 
