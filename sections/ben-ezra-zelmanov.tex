@@ -145,7 +145,8 @@
     & T = \quad \langle \trace(\tilde{X}),\quad  \trace(\tilde{Y}),\quad  \trace(\tilde{X}\tilde{Y}) \rangle \quad \subseteq \tilde{S} \\
     & R = \quad \langle \tilde{X},\quad  \tilde{Y},\quad  T \rangle
 \end{align*}
-Далее авторы исследуют некоторые свойства этих модулей.
+Кольцо $R$ называется кольцом псевдо-общих матриц.\\
+Далее авторы исследуют некоторые свойства этих колец.
 Приведем их списком без доказательств, отметив, что используемые техники вполне элементарны и что комбинаторика, связанная со следами изучалась в PI-теории.
 
 \vskip 0.1in\noindent
@@ -171,8 +172,7 @@
     \langle 1, \trace(X), \trace(Y), \trace(XY) \rangle
 \]
 и заметим, что она снабжена градуировкой однородных компонент.
-Построив гомоморфизм из нее в $R$, определенный $X\mapsto \tilde{X}, Y\mapsto\tilde{Y}$.
-Он индуцирует градуировку на $R$:
+Построим гомоморфизм из нее в $R$, определенный $X\mapsto \tilde{X}, Y\mapsto\tilde{Y}$, который индуцирует градуировку на $R$:
 \vskip 0.1in\noindent
 \begin{proposition}
     Можно ввести градуировку на $R$:
@@ -183,20 +183,21 @@
 
 Исследуя кольцо общих матриц полезным оказывается рассмотреть следующий $T$-модуль порожденный
 \[
-    [\tilde{X}, \tilde{Y}] \tilde{X}, \quad [\tilde{X}, \tilde{Y}] \tilde{Y}, \quad [\tilde{X}, \tilde{Y}]^2 \quad [\tilde{X}, \tilde{Y}]\tilde{X}\tilde{Y}
+    [\tilde{X}, \tilde{Y}] \tilde{X}, \quad [\tilde{X}, \tilde{Y}] \tilde{Y}, \quad [\tilde{X}, \tilde{Y}]^2, \quad [\tilde{X}, \tilde{Y}]\tilde{X}\tilde{Y}
 \]
 Обозначим его через $J$.
+И пусть $\hat{J}$ ~--- замыкание $J$ в топологии градуировки $R$.\\
 
 \vskip 0.1in\noindent
 \begin{proposition}
     Модуль $J$ является
     \begin{enumerate}
         \item двусторонним идеалом кольца $R$.
-        \item свободным $T$-модуль порожденным \[[\tilde{X}, \tilde{Y}] \tilde{X}, \quad [\tilde{X}, \tilde{Y}] \tilde{Y}, \quad [\tilde{X}, \tilde{Y}]^2 \quad [\tilde{X}, \tilde{Y}]\tilde{X}\tilde{Y}\]
+        \item свободным $T$-модулем порожденным \[[\tilde{X}, \tilde{Y}] \tilde{X}, \quad [\tilde{X}, \tilde{Y}] \tilde{Y}, \quad [\tilde{X}, \tilde{Y}]^2, \quad [\tilde{X}, \tilde{Y}]\tilde{X}\tilde{Y}\]
     \end{enumerate}
 \end{proposition}
 \vskip 0.1in\noindent
-Обозначим $\hat{J}$ ~--- замыкание $J$ в топологии градуировки $R$.\\
+
 Определив
 \begin{align*}
     & \mathring{S} = \langle \trace(\tilde{Y}), [\tilde{X}, \tilde{Y}]^2 \rangle \\
@@ -219,10 +220,8 @@
 \end{proposition}
 
 \vskip 0.1in\noindent
-{\large\textbf{Производная подгруппа $\tilde{G}$}}
-
+{\large\textbf{Производная подгруппа $\tilde{G}$.}}\\
 Пусть $\tilde{G}^{'}, \tilde{G}^{''}$ первая и вторая производные подгруппы соответственно.
-
 Следующая лемма мотивирует все предыдущие предложения:
 \begin{lemma}
     Модуль $J$ содержит вторую производную подгруппу $\tilde{G}$:
