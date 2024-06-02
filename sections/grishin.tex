@@ -109,13 +109,18 @@
 Причем понятно, что переменные $t(x_i)$ можно умножать на константу все сразу -- в подстановке~\ref{eq:key-sub} можно взять $x_i\mapsto x_i+c\cdot t(x_i)x_i$.
 Далее все аналогично доказательству леммы~\ref{homogen}.\\
 Итак, разберемся, что получилось после отлинеаризованной подстановки (\ref{eq:key-sub}). Для этого рассмотрим, что произойдет с мономом $x_1^{\alpha_1}\ldots x_n^{\alpha_n}$:
-\[x_1^{\alpha_1}\ldots x_n^{\alpha_n}\mapsto ((x_1+t(x_1)x_1)^{\alpha_1}\ldots (x_n+t(x_n)x_n)^{\alpha_n}))_{(t,1)}\]Ясно, что после линеаризации по $t$ останутся только те члены, в которых ровно из одной скобки произведения взяли $t(x_i)$.
+\[x_1^{\alpha_1}\ldots x_n^{\alpha_n}\mapsto ((x_1+t(x_1)x_1)^{\alpha_1}\ldots (x_n+t(x_n)x_n)^{\alpha_n}))_{(t,1)}\]
+Ясно, что после линеаризации по $t$ останутся только те члены, в которых ровно из одной скобки произведения взяли $t(x_i)$.
 То есть при $t(x_i)$ будет $\alpha_i\cdot x_1^{\alpha_1}\ldots x_n^{\alpha_n}$.
 Итак:
 \begin{equation}
     \label{eq:key_monom}
     x_1^{\alpha_1}\ldots x_n^{\alpha_n}\mapsto\sum\limits_{i=1}^n t(x_i)(\alpha_i\cdot x_1^{\alpha_1}\ldots x_n^{\alpha_n})
 \end{equation}
+\begin{remark}
+    Заметим, что это соответствует действию диагонального векторного поля $\sum t(x_i) \cdot x_i \cdot \partial_i$.
+    Это будет полезно для гипотезы Гельфанда.
+\end{remark}
 Следовательно, однородный многочлен $P$ степени $m$ перейдет в:
 \begin{equation}
     \label{eq:key_t}
