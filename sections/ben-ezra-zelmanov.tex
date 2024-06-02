@@ -127,11 +127,17 @@
 Мы пропустим часть с выводом некоторых достаточно тривиальных свойств матриц $2\times 2$, следующих из теоремы Гамильтона-Кэли.
 Отметим, что хорошо известно, что квадрат коммутатора $\tilde{X}, \tilde{Y}$ лежит в центре, является скалярной матрицей.
 Поэтому иногда будет воспринимать $[\tilde{X},\tilde{Y}]^2$ как элемент $\tilde{S}$.
+И наоборот, если пишем, что элемент $\tilde{S}$ лежит в $M_2(\tilde{S})$, то имеем в виду элементы вида $\tilde{S} \cdot
+\begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+\end{pmatrix},$
 
 \vskip 0.1in\noindent
 {\large\textbf{Кольцо псевдо-общих матриц.}}
 Введем дискретные кольца
 \begin{align*}
-    & S = \langle \trace(\tilde{X}), \trace(\tilde{Y}), [\tilde{X}, \tilde{Y}]^2 \rangle \\
-
+    & S = \langle \trace(\tilde{X}), \trace(\tilde{Y}), [\tilde{X}, \tilde{Y}]^2 \rangle \subseteq \tilde{S} \\
+    & T = \langle \trace(\tilde{X}), \trace(\tilde{Y}), \trace(\tilde{X}\tilde{Y}) \rangle \subseteq \tilde{S} \\
+    & R = \lange \tilde{X}, \tilde{Y}, T
 \end{align*}
