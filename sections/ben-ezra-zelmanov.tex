@@ -145,7 +145,7 @@
 Обозначим их замыкания $\hat{S}, \hat{T}, \hat{R}$ соответственно.
 
 Далее авторы исследуют некоторые свойства этих модулей.
-Приведем их списком без доказательств, отметив, что используемые техники вполне элементарны.
+Приведем их списком без доказательств, отметив, что используемые техники вполне элементарны и что комбинаторика, связанная со следами изучалась в PI-теории.
 
 \begin{proposition}
     Алгебра $T$ ~--- свободная коммутативная $\Z/2\Z$-алгебра порожденная $\trace(\tilde{X}), \trace(\tilde{Y}), \trace(\tilde{X}\tilde{Y})$.
@@ -178,7 +178,7 @@
 \[
     [\tilde{X}, \tilde{Y}] \tilde{X}, \quad [\tilde{X}, \tilde{Y}] \tilde{Y}, \quad [\tilde{X}, \tilde{Y}]^2 \quad [\tilde{X}, \tilde{Y}]\tilde{X}\tilde{Y}
 \]
-Обозначим его через $J$, и его замыкание $\hat{J}$.
+Обозначим его через $J$.
 
 \begin{proposition}
     \begin{enumerate}
@@ -186,9 +186,24 @@
         \item $J$ ~--- свободный $T$-модуль порожденный $\tilde{X}, \tilde{Y}] \tilde{X}, \quad [\tilde{X}, \tilde{Y}] \tilde{Y}, \quad [\tilde{X}, \tilde{Y}]^2 \quad [\tilde{X}, \tilde{Y}]\tilde{X}\tilde{Y}$
     \end{enumerate}
 \end{proposition}
+Обозначим $\hat{J}$ ~--- замыкание $J$ в топологии градуировки $R$.
 Определив
 \begin{align*}
     & \mathring{S} = \langle \trace(\tilde{Y}), [\tilde{X}, \tilde{Y}]^2 \rangle \\
     & \mathring{T} = \mathring{S} + \trace(\tilde{X}\tilde{Y}) \mathring{S}
 \end{align*}
-Следующее предложение оказывается оказыавется
+авторы получают следующее описание $\hat{J}$:
+\begin{proposition}
+    Каждый элемент $v\in \hat{J}$ единственным образом представляется в виде
+    \[
+        \sum\limits_{n=0}^{\infty}\sum\limits_{i=0}^{\infty}
+        u_{n,i} + v_{n,i} + w_{n,i}
+    \]
+    где
+    \begin{align*}
+        & u_{n,i} \in (\trace(\tilde{X}))^n \cdot (\mathring{T}\cdot[\tilde{X}, \tilde{Y}]\tilde{X} + \mathring{T}\cdot[\tilde{X}, \tilde{Y}]\tilde{Y})
+        & v_{n,i} \in (\trace(\tilde{X}))^n \cdot \mathring{T} \cdot [\tilde{X}, \tilde{Y}]^2
+        & w_{n,i} \in (\trace(\tilde{X}))^n \cdot \mathring{T} \cdot [\tilde{X}, \tilde{Y}]\cdot \tilde{X} \cdot \tilde{Y}
+    \end{align*}
+\end{proposition}
+
