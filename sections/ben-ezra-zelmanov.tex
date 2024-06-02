@@ -186,7 +186,7 @@
         \item свободным $T$-модуль порожденным \[[\tilde{X}, \tilde{Y}] \tilde{X}, \quad [\tilde{X}, \tilde{Y}] \tilde{Y}, \quad [\tilde{X}, \tilde{Y}]^2 \quad [\tilde{X}, \tilde{Y}]\tilde{X}\tilde{Y}\]
     \end{enumerate}
 \end{proposition}
-Обозначим $\hat{J}$ ~--- замыкание $J$ в топологии градуировки $R$.
+Обозначим $\hat{J}$ ~--- замыкание $J$ в топологии градуировки $R$.\\
 Определив
 \begin{align*}
     & \mathring{S} = \langle \trace(\tilde{Y}), [\tilde{X}, \tilde{Y}]^2 \rangle \\
@@ -207,4 +207,23 @@
     \end{align*}
 \end{proposition}
 
+\vskip 0.1in\noindent
+{\large\textbf{Производная подгруппа $\tilde{G}$}}
+
+Пусть $\tilde{G}^', \tilde{G}^{''}$ первая и вторая производные подгруппы соответственно.
+
 Следующая лемма мотивирует все предыдущие предложения:
+\begin{lemma}
+    $\tilde{G}^{''}\subseteq \hat{J}$
+\end{lemma}
+
+%Обозначим $\tilde{G}_n$ ~--- нижний центральный ряд группы $\tilde{G}$.
+Введем отображения
+\[
+    n, \overline{n}, \overline{i}: \tilde{G}^{''}: \to \mathbb{N}\cup\{{\infty}\}
+\]
+Пусть $g = \sum\limits_{n=0}^{\infty}\sum\limits_{i=0}^{\infty}u_{n,i} + v_{n,i} + w_{n,i}$.
+Тогда
+\begin{align*}
+    & n(g) = \min \{ n \mid \exists i: u_{n,i} + v_{n,i} + w_{n,i} = 0 \}
+\end{align*}
