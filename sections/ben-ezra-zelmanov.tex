@@ -153,5 +153,23 @@
     \begin{enumerate}
         \item Алгебра $S$ ~--- свободная коммутативная $\Z/2\Z$-алгебра порожденная $\trace(\tilde{X}), \trace(\tilde{Y}), \trace(\tilde{X}\tilde{Y})$
         \item $S\supseteq T$
+        \item $T$ ~--- свободный  $S$-модуль порожденный $1, \trace(\tilde{X}\tilde{Y})$.
     \end{enumerate}
 \end{proposition}
+\begin{proposition}
+    Кольцо $R$ ~--- свободный $T$-модуль порожденный $1, \tilde{X}, \tilde{y}, \tilde{x}\tilde{y}$
+\end{proposition}
+Вернувшись к общим матрицам, рассмотрим алгебру $\langle 1, \trace(X), \trace(Y), \trace(XY) \rangle$ и заметить, она снабжена градуировкой однородных компонент.
+Построив гомоморфизм из нее в $R$, определенный $X\mapsto \tilde{X}, Y\mapsto\tilde{Y}$.
+Он индуцирует градуировку на $R$:
+\begin{proposition}
+    Можно ввести градуировку на $R$:
+    \[
+        R = \bigoplus\limits_0^{\infty} R^{(n)}
+    \]
+\end{proposition}
+
+Исследуя кольцо общих матриц полезным оказывается рассмотреть следующий $T$-модуль порожденный
+\[
+    [\tilde{X}, \tilde{Y}] \tilde{X}, [\tilde{X}, \tilde{Y}] \tilde{Y}, [\tilde{X}, \tilde{Y}]^2, [\tilde{X}, \tilde{Y}]\tilde{X}\tilde{Y}
+\]
