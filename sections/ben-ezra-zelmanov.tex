@@ -238,6 +238,14 @@
 \begin{lemma}
     Для каждого нетривиального элемента $g\in \tilde{G}^{(3)}$ и целого неотрицательного числа $k$ существует $\rho \in \mathbb{N}$, такое что если
     \[
-        \overline{n}(g_x)
+        \begin{cases}
+            \overline{n}(g_x)\geq \rho \\
+            \overline{i}(g_x) \geq \rho + 8k
+        \end{cases}
     \]
+    существует $h\in \tilde{G}^{(3)}\cap \tilde{G}_k$ такой, что
+    \[
+        \overline{n}((gh)_x) \geq \overline{n}(g_x)
+    \]
+    Причем равенство достигается только при $\overline{i}((gh)_x) \geq \overline{i}(g_x)$
 \end{lemma}
