@@ -1,15 +1,398 @@
-%! Author = vanyavorobiov
-%! Date = 18/06/2024
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Preamble
-\documentclass[11pt]{article}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
 
-% Packages
-\usepackage{amsmath}
+\documentclass{beamer}
 
-% Document
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+    \usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\newtheorem{remark}{Remark}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{theorem*}{Theorem}
+\newtheorem{formula}{Formula}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{textpos}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE 1
+%----------------------------------------------------------------------------------------
 \begin{document}
 
 
+%\begin{frame}
+%\titlepage % Print the title page as the first slide
+%\end{frame}
 
-\end{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+    \title[PI-theory]{Specht Problem and Gelfand Conjecture} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+
+% Your name
+    \institute[HSE] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+    {
+        \\ % Your institution for the title page
+        \bigskip
+
+        \centering\Large{Ivan Evgenevich Vorobiov} \\
+        \centering\small{Scientific advisor Doctor of Sciences, professor\\ Alexei Yakovlevich Kanel-Belov\\}
+        \centering\small{Scientific co-advisor Candidate of Sciences\\ Anton Sergeevich Khoroshkin}
+    }
+
+
+    \begin{document}
+
+
+        \begin{frame}
+            \titlepage % Print the title page as the first slide
+        \end{frame}
+
+        \begin{frame}{Strucure of the work}
+            There are two non-trivial applications of PI-theory those will be presented:
+            \begin{itemize}
+                \item Non-linearity of free pro-$p$ groups
+                \item Gelfand's conjecture
+            \end{itemize}
+            Structure:
+            \begin{enumerate}
+                \item Preliminaries for pro-$p$ structures
+                \item A brief historical review
+                \item Problem statement (on non-linearity of free pro-$p$ group over 2-by-2 matrices)
+                \item Review of Zubkov's approach
+                \item Review of Zelmanov, Ben-Ezra's approach
+                \item Modification of Zelmanov, Ben-Ezra's approach for $\mathrm{char} \Delta=4$
+                \item Gelfand conjecture, statement and reformulation: whether some module is Noetherian
+                \item Connection between Gelfand conjecture and PI-theory
+            \end{enumerate}
+        \end{frame}
+
+        \begin{frame}{Preliminaries}
+            \begin{definition}
+                The inverse (projective) limit of the projective system of finite groups (rings) is called a profinite group (ring).
+            \end{definition}
+            \begin{definition}
+                The inverse limit of the projective system of $p$-groups is called pro-$p$ group.
+            \end{definition}
+            \begin{definition}
+                Commutative Noetherian complete local ring $\Delta$ with a maximal ideal $I$ is called pro-$p$ ring if $\Delta/I$ is a finite field of characteristic $p$.
+            \end{definition}
+            In that case:
+            \[ \Delta = \varprojlim \Delta/I^n \]
+
+
+        \end{frame}
+        \begin{frame}{Preliminaries}
+            \begin{definition}
+                Let $F$ be a free group generated by alphabet $\mathcal{S}$.
+                Consider the completion $\widetilde{F}_p$ of $F$ with respect to topology, defined by all normal subgroups of a finite index $p^l$, $\forall l\in\mathbb{N}$ which have almost all generators from $\mathcal{S}$.
+                Then $\widetilde{F}_p$ is called a free pro-$p$-group.
+            \end{definition}
+            \begin{remark}
+                Here and later the completion with respect to normal subgroups means the inverse limit of the system of factorgroups.
+            \end{remark}
+            Let $\Delta$ be pro-$p$ ring
+            \[GL_d^1(\Delta) = \mathrm{ker}\left( GL_d(\Delta) \xrightarrow{\Delta\to\Delta/I} GL_d(\Delta/I) \right)\]
+            is a pro-$p$-group.
+        \end{frame}
+
+        \begin{frame}{Main problem}
+            \begin{conjecture}
+                A non-abelian free pro-$p$ group $\widetilde{F}_p$ cannot be continuously embedded in $GL_d^1(\Delta)$ for any pro-$p$ ring $\Delta$.
+            \end{conjecture}
+        \end{frame}
+
+
+        \begin{frame}{Historical review}
+            There are several partial results for certain $\widetilde{F}_p, \Delta, p$, that let us suppose that answer is positive for the general case:
+            \begin{itemize}
+                \item In 1987, A.N\ Zubkov (\cite{Zubkov}) demonstrated that for $d=2, p\neq2$ the conjecture holds true.
+                \item In 1991, J.D.\ Dixon, A.\ Mann, M.P.F.\ du Sautoy, D.\ Segal (\cite{DMSD}) established the conjecture for $\Delta=\mathbb{Z}_p$, $GL_d^1(\mathbb{Z}_p)=\mathrm{ker}\left( GL_2(\mathbb{Z}_p) \xrightarrow{\mathbb{Z}_p\to\mathbb{F}_p} GL_2(\mathbb{F}_p) \right)$
+                \item In 1999, utilizing the profound results of Pink (\cite{Pink}), Y.\ Barnea, M.\ Larsen (\cite{Barnea-Larsen}) proved the conjecture for $\Delta=\left( \mathbb{Z}/p\mathbb{Z} \right)[[t]]$
+                \item In 2005, E.\ Zelmanov (\cite{Zelmanov}) announced that conjecture holds true for $p\gg d$.
+                \item In 2020, D.\ Ben-Ezra, E.\ Zelmanov showed (\cite{Ben-Ezra-Zelmanov}) that for $d=2, p=2$ and $\mathrm{char}(\Delta)=2$  the conjecture holds true.
+            \end{itemize}
+        \end{frame}
+
+        \begin{frame}{Zubkov's approach}
+            \begin{theorem*}[Zubkov, 1987]
+                Let $F$ be a free non-abelian pro-$p$ group, $\Delta$ is a pro-$p$ ring.
+                $F$ cannot be continuously embedded in $GL^1_2(\Delta)$, when $p>2$.
+            \end{theorem*}
+
+            The first non-trivial idea is to introduce the following definition:
+            \begin{definition}
+                Let $F$ be a free pro-$p$ group, and $G$ be a pro-$p$ group.
+                Then every $1\neq w\in F$ such that $w\in Ker(\varphi)$ for all continuous homomorphisms $\varphi: F\to G$ is called a pro-$p$ identity of G.
+            \end{definition}
+            Zubkov consider the natural homomorphism to algebra of generic matrices:\\
+            Let $x,y \in \widetilde{F}_p$~--- generators, $\pi: x \mapsto 1+x^*, y \mapsto 1+y^*$, where $x^*, y^*$ are the generic matrices over $\mathbb{Z}_p$.
+            And one can continue $\pi$ to the completion $\langle \langle x, y \rangle \rangle$, and it will map on closure of $\langle1+x^*, 1+y^*\rangle$.
+        \end{frame}
+
+        \begin{frame}{Zubkov's approach}
+            Homomorphism $\pi$ is called the universal representation, and that's why:
+            \begin{lemma}
+                Each $1\neq z \in \ker \pi$ is a pro-$p$ identity of $GL^1_d(\Delta)$ for all pro-$p$ rings $\Delta$.
+            \end{lemma}
+            This theorem can be proven with a standard commutative algebra approaches.
+            And this implies that it would be enough to prove
+            \begin{theorem}
+                The universal representation of the degree $2$ is not injective for $p\neq 2$.
+            \end{theorem}
+            So we need to construct the pro-$p$ identity for generic matrices.\\
+        \end{frame}
+        \begin{frame}{Zubkov's approach}
+            Zubkov investigated the lower central series of Lie algebra of generic matrices.\\
+            And he encountered a contradiction with the classical Witt's formula:
+            \begin{formula}[Witt]
+                Rank of $r$-th factor of the lower central series of $\widetilde{F}_p$ (as a $\mathbb{Z}_p-module$):
+                \[\frac{1}{r}\sum\limits_{m \mid r} \mu(m) \cdot 2^{\frac{r}{m}}\]
+            \end{formula}
+        \end{frame}
+
+        \begin{frame}{Ben-Ezra, Zelmanov's approach}
+            \begin{theorem*}[Ben-Ezra, Zelmanov, 2020]
+                Let $F$ be a free non-abelian pro-$2$ group, $\Delta$ is a pro-$2$ ring.
+                $F$ cannot be continuously embedded in $GL^1_2(\Delta)$, when $\mathrm{char}\Delta=2$.
+            \end{theorem*}
+            Ben-Ezra and Zelmanov modified Zubkov's universal representation for the case $p=2$:
+            analogous homomorphism to generic matrices over $\mathbb{Z}/2\mathbb{Z}$ (instead of $\mathbb{Z}_2$).
+
+            Then the following lemma still holds and has a pretty simple proof:
+            \begin{lemma}
+                Each $1\neq z \in \ker \pi$ is a pro-$2$ identity of $GL^1_2(\Delta)$ for all pro-$2$ rings $\Delta$ with $\mathrm{char}\Delta=2$.
+            \end{lemma}
+            And the last theorem has a very hard proof:
+            authors investigated Lie algebra using PI-theory approaches:
+            \begin{theorem}
+                The universal representation of the degree $2$ is not injective.
+            \end{theorem}
+        \end{frame}
+
+        \begin{frame}{$\mathrm{char}\Delta = 4$}
+            \begin{conjecture}
+                Let $F$ be a free non-abelian pro-$2$ group, $\Delta$ is a pro-$2$ ring.
+                $F$ cannot be continuously embedded in $GL^1_2(\Delta)$, when $\mathrm{char}\Delta=4$.
+            \end{conjecture}
+            We intend to prove it using the similar approaches, and believe that one can prove it even for the case $\mathrm{char}\Delta=2^l$.
+
+            Furthermore, maybe the case $\mathrm{char}\Delta=0$ can be investigated if the above statement will be proved.
+        \end{frame}
+
+        \begin{frame}{PI-theory, preliminaries}
+            Let $T$ be the endomorphism (substitution) semigroup of the free algebra $F = k\langle x_1,\ldots,x_i,\ldots\rangle$.
+            \begin{definition}
+                An endomorphism $\tau$ of $F$ defined by the rule $x_i \mapsto g_i, g_i \in F$, is called a substitution of type
+                $(x_1,\ldots,x_i,\ldots) \mapsto (g_1,\ldots,g_i,\ldots)$.
+            \end{definition}
+            \begin{definition}
+                $T$-space in $F$ is a vector subspace of $F$, that is closed under substitutions.
+            \end{definition}
+            \begin{definition}
+                $T$-ideal in F is an ideal of F that is at the same time a T-space.
+            \end{definition}
+        \end{frame}
+        \begin{frame}{PI-theory, preliminaries}
+            Following theorem (the special case of Shchigolev's \cite{Shch}) is proved in author's last year coursework.
+            \begin{theorem}
+                Any $T$-space in algebra $k[x_1,\ldots,x_n]$ is finitely based.
+            \end{theorem}
+            Furthermore, one can prohibit some of the substitutions and show that $T$-spaces are finitely based using some $\widetilde{T}\subset T$
+
+            The main idea is to use substitutions:
+            \[f(x_1,\ldots,x_i,\ldots,x_n) \mapsto f(x_1, \ldots, 1 + \alpha_i P(x_i), \ldots, x_n)\]
+            And then we linearize it on $\alpha_i$.
+        \end{frame}
+        \begin{frame}{Gelfand conjecture}
+            \begin{conjecture}[Gelfand, 1970, \cite{Ge1}]
+                The homology of the Lie subalgebra of finite codimension in the Lie algebra of algebraic vector fields on an affine algebraic manifold are finite-dimensional in each
+                homological degree.
+            \end{conjecture}
+            We denote by $\mathcal{W}_n$ the Lie algebra of formal vector fields on an n-dimensional plane $V$.\\
+            \[\mathcal{W}_n\simeq \prod\limits_{k=0}^{\infty}S^k V\otimes V^*\]
+            The subalgebras $\prod\limits_{k=d}^{\infty}S^k V\otimes V^*$ of a finite codimension are denoted by $L_d(n)$.
+        \end{frame}
+        \begin{frame}{Gelfand conjecture}
+            Using the classical considerations of homological algebra, one can reduce Gelfand conjecture to the following lemma:
+            \begin{lemma}
+                Any finitely generated $L_d(n)$-module is noetherian.
+            \end{lemma}
+            Then we will observe how to use Grishin's methods to prove this lemma.
+        \end{frame}
+
+        \begin{frame}{Bibliography}
+            \tiny
+            \begin{thebibliography}{99}
+
+
+                \bibitem{Zubkov}
+                A. Zubkov,
+                \emph{Non-abelian free pro-p-groups cannot be represented by 2-by-2 matrices},
+                \emph{Siberian Mathematical Journal},
+                vol. 28, pp. 742--747,
+                1987.
+
+                \bibitem{Pink}
+                R. Pink,
+                \emph{Compact subgroups of linear algebraic groups},
+                \emph{Journal of Algebra},
+                vol. 206, pp. 438--504,
+                1998.
+
+                \bibitem{Barnea-Larsen}
+                Y. Barnea and M. Larsen,
+                \emph{A non-abelian free pro-p group is not linear over a local field},
+                \emph{Journal of Algebra},
+                vol. 214, pp. 338--341,
+                1999.
+
+                \bibitem{DMSD}
+                J. Dixon, A. Mann, M. du Sautoy, and D. Segal,
+                \emph{Analytic pro-p-groups},
+                \emph{London Mathematical Society Lecture Note Series},
+                Cambridge University Press,
+                1991.
+
+                \bibitem{Ben-Ezra-Zelmanov}
+                D. Ben-Ezra and E. Zelmanov,
+                \emph{On Pro-2 Identities of 2×2 Linear Groups},
+                \emph{arXiv:1910.05805v2},
+                2020.
+
+                \bibitem{Zelmanov}
+                E. Zelmanov,
+                \emph{Infinite algebras and pro-p groups},
+                \emph{Infinite groups: geometric, combinatorial and dynamical aspects},
+                Progr. Math., vol. 248, pp. 403--413,
+                2005.
+
+                \bibitem{Gelfand}
+                I.M. Gelfand,
+                \emph{The cohomology of infinite dimensional Lie algebras; Some questions of integral geometry},
+                \emph{Proceedings of ICM},
+                vol. T.1, pp. 95--111,
+                1970.
+
+                \bibitem{Feigin-Kanel-Khoroshkin}
+                B. Feigin, A. Kanel-Belov, and A. Khoroshkin,
+                \emph{On finite dimensionality of homology of subalgebras of vector fields},
+                \emph{arXiv:2211.08510v1},
+                2022.
+
+                \bibitem{Centrone-Kanel-Khoroshkin-Vorobiov}
+                L. Centrone, A. Kanel-Belov, A. Khoroshkin, and I. Vorobiov,
+                \emph{Specht property for systems of commutative polynomials and Gelfand conjecture},
+                \emph{researchgate net},
+                2022.
+
+                \bibitem{Kemer}
+                A. Kemer,
+                \emph{Finite basability of identities of associative algebras},
+                \emph{Algebra and Logics},
+                vol. 26, no. 5, pp. 597--641,
+                1987.
+
+                \bibitem{Aljadeff-Kanel-Karasik}
+                E. Aljadeff, A. Kanel-Belov, and Y. Karasik,
+                \emph{Kemer’s theorem for affine PI algebras over a field of characteristic zero},
+                \emph{Journal of Pure and Applied Algebra},
+                vol. 220, no. 8, pp. 2771--2808,
+                2016.
+
+%                \bibitem{Procesi}
+%                C. Procesi,
+%                \emph{The geometry of polynomial identities},
+%                \emph{Izv. Math.},
+%                vol. 80, no. 5, pp. 910--953,
+%                2016.
+
+                \bibitem{Grishin}
+                A. Grishin,
+                \emph{On finitely based systems of generalized polynomials},
+                \emph{Math. USSR-Izv.},
+                vol. 37, no. 2, pp. 243--272,
+                1991.
+
+            \end{thebibliography}
+
+        \end{frame}
+
+%----------------------------------------------------------------------------------------
+
+
+    \end{document}
