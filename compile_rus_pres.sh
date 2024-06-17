@@ -5,6 +5,7 @@ FILENAME="presentation_russian"
 
 # compile.sh once
 pdflatex -interaction=nonstopmode $FILENAME.tex
+pdflatex -interaction=nonstopmode $FILENAME.tex
 
 # delete log files
 rm -f $FILENAME.aux $FILENAME.log $FILENAME.out $FILENAME.bbl $FILENAME.blg $FILENAME.bcf $FILENAME.run.xml $FILENAME.toc
