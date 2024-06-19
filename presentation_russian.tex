@@ -428,19 +428,34 @@
             Furthermore, maybe the case $\mathrm{char}\Delta=0$ can be investigated if the above statement will be proved.
         \end{frame}
 
-        \begin{frame}{PI-theory, preliminaries}
-            Let $T$ be the endomorphism (substitution) semigroup of the free algebra $F = k\langle x_1,\ldots,x_i,\ldots\rangle$.
+        \begin{PI-теория}
+            Пусть $k$ — поле характеристики ноль, а $F = k\langle x_1, \ldots, x_i, \ldots \rangle$ — свободная, счётно порождённая ассоциативная алгебра над полем $k$.
+            Пусть $T$ — полугруппа эндоморфизмов (подстановок) $F$.
+            И алфавит\\ $X = \{ x_1, \ldots, x_i, \ldots \}$.\\
+            Теперь приведем несколько классических определений.
+
             \begin{definition}
-                An endomorphism $\tau$ of $F$ defined by the rule $x_i \mapsto g_i, g_i \in F$, is called a substitution of type
-                $(x_1,\ldots,x_i,\ldots) \mapsto (g_1,\ldots,g_i,\ldots)$.
+                Эндоморфизм $\tau$ алгебры $F$, определяемый правилом $x_i \mapsto g_i$, где $g_i \in F$, называется подстановкой типа $(x_1, \ldots, x_i, \ldots) \mapsto (g_1, \ldots, g_i, \ldots)$.
             \end{definition}
+
             \begin{definition}
-                $T$-space in $F$ is a vector subspace of $F$, that is closed under substitutions.
+                $T$-пространство в $F$ — это векторное подпространство $F$, замкнутое относительно подстановок.
             \end{definition}
+
             \begin{definition}
-                $T$-ideal in F is an ideal of F that is at the same time a T-space.
+                $T$-идеал в $F$ — это идеал $F$, который одновременно является $T$-пространством.
             \end{definition}
-        \end{frame}
+
+            Следующая теорема (а вернее, метод ее доказательства) очень полезна при изучении гипотезы Гельфанда:
+            \begin{theorem}
+                \label{main}
+                Пусть $M$ ~--- подмножество кольца многочленов от $n$ переменных над полем характеристики 0.
+                Тогда существует конечное подмножество $\M_0\subseteq M$, такое что $M$ содержится в $T$-пространстве порожденном $M_0$.
+            \end{theorem}
+
+
+
+
         \begin{frame}{PI-theory, preliminaries}
             Following theorem (the special case of Shchigolev's \cite{Shch}) is proved in author's last year coursework.
             \begin{theorem}
