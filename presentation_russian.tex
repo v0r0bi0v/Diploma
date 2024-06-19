@@ -502,20 +502,29 @@
 
 
         \begin{frame}{Gelfand conjecture}
-            \begin{conjecture}[Gelfand, 1970, \cite{Gelfand}]
-                The homology of the Lie subalgebra of finite codimension in the Lie algebra of algebraic vector fields on an affine algebraic manifold are finite-dimensional in each
-                homological degree.
+            Пусть $\Wn$ ~--- алгебра Ли формальных векторных полей, и $\Wpn$ ~--- алгебра Ли полиномиальных векторных полей.
+            Хорошо известно, что
+            \[
+                \Wn \cong \prod\limits_{k=0}^{\infty} S^k V\otimes V^*, \quad \Wpn \cong \bigoplus\limits_{k=0}^{\infty} S^k V\otimes V^*
+            \]
+            Обозначим подалгебры конечного индекса:
+            \[
+                \L_d(n) = \prod\limits_{k=d}^{\infty} S^k V\otimes V^*, \quad \Lp_d(n) = \bigoplus\limits_{k=d}^{\infty} S^k V\otimes V^*
+            \]
+            Пусть $V_{\lambda}$ ~--- произвольное неприводимое представление $\mathfrak{gl}_n$, ему соответствует $\L_0(n)$-модуль $V_{\lambda}$ и тривиальное действие на подалгебре $\L_1(n)\subset\L_0(n)$.
+            Обозначим индуцированный и коиндуцированный $\Wn$- и $\Wpn$- модули:
+            \begin{gather*}
+                T_{\lambda} = \mathrm{Ind}^{\Wn}_{\L_0(n)} V_{\lambda} = U(\mathcal{W}_n^{pol}) \otimes_{U(L_0(n))} V_{\lambda} \cong \bigoplus_{k=0}^{\infty} S^k V^*\otimes V_{\lambda} \\
+                \mathcal{T}_{\lambda} = \mathrm{CoInd}^{\Wn}_{\L_0(n)} V_{\lambda} = \operatorname{Hom}_{U(L_0(n))}(U(\mathcal{W}_n), V_{\lambda}) \cong \bigoplus_{k=0}^{\infty} S^k V\otimes V_{\lambda}
+            \end{gather*}
+
+            Методами гомологической алгебры (которые здесь будут опущены, см.\ одну из классических монографий~\cite{Fuks}) можно свести гипотезу Гельфанда~\ref{Gelfand} к более общему утверждению
+
+            \vskip 0.1in\noindent
+            \begin{conjecture}
+                Модуль $\mathcal{T}_{\lambda_1}\otimes\ldots\otimes\mathcal{T}_{\lambda_r}$ нетеров как $\L_d(n)$-модуль.
             \end{conjecture}
-            Обозначим $\mathcal{W}_n$ алгебру Ли формальных векторных полей на $n$-мерном пространстве $V$.\\
-            \[\mathcal{W}_n\simeq \prod\limits_{k=0}^{\infty}S^k V\otimes V^*\]
-            The subalgebras $\prod\limits_{k=d}^{\infty}S^k V\otimes V^*$ of a finite codimension are denoted by $L_d(n)$.
-        \end{frame}
-        \begin{frame}{Gelfand conjecture}
-            Using the classical considerations of homological algebra, one can reduce Gelfand conjecture to the following lemma:
-            \begin{lemma}
-                Any finitely generated $L_d(n)$-module is noetherian.
-            \end{lemma}
-            Then we will observe how to use Grishin's methods to prove this lemma.
+            \vskip 0.1in\noindent
         \end{frame}
 
         \begin{frame}{Библиография}
