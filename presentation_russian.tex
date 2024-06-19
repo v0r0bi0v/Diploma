@@ -446,28 +446,25 @@
         \end{frame}
 
         \begin{frame}{Методы Гришина}
+            Ограничимся подстановками вида $x_i\mapsto p(x_i)$ и в этом смысле будем использовать понятие $T$-пространства.
+
             Следующая теорема (а вернее, метод ее доказательства) очень полезна при изучении гипотезы Гельфанда:
             \begin{theorem}
                 \label{main}
                 Пусть $M$ ~--- подмножество кольца многочленов от $n$ переменных над полем характеристики 0.
                 Тогда существует конечное подмножество $M_0\subseteq M$, такое что $M$ содержится в $T$-пространстве порожденном $M_0$.
             \end{theorem}
+
+            \begin{remark}
+                Данная теорема является важным шагом в альтернативном доказательстве проблемы Шпехта.
+                Она доказывает базу индукции, а переход (как раз с помощью леммы Артина-Риса) описан в курсовой работе докладчика прошлого года.
+            \end{remark}
         \end{frame}
 
 
 
 
-        \begin{frame}{PI-theory, preliminaries}
-            Following theorem (the special case of Shchigolev's \cite{Shch}) is proved in author's last year coursework.
-            \begin{theorem}
-                Any $T$-space in algebra $k[x_1,\ldots,x_n]$ is finitely based.
-            \end{theorem}
-            Furthermore, one can prohibit some of the substitutions and show that $T$-spaces are finitely based using some $\widetilde{T}\subset T$
 
-            The main idea is to use substitutions:
-            \[f(x_1,\ldots,x_i,\ldots,x_n) \mapsto f(x_1, \ldots, 1 + \alpha_i P(x_i), \ldots, x_n)\]
-            And then we linearize it on $\alpha_i$.
-        \end{frame}
         \begin{frame}{Gelfand conjecture}
             \begin{conjecture}[Gelfand, 1970, \cite{Ge1}]
                 The homology of the Lie subalgebra of finite codimension in the Lie algebra of algebraic vector fields on an affine algebraic manifold are finite-dimensional in each
