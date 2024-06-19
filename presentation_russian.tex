@@ -192,29 +192,25 @@
             \end{itemize}
         \end{frame}
 
-        \begin{frame}{Zubkov's approach}
-            \begin{theorem*}[Zubkov, 1987]
-                Let $F$ be a free non-abelian pro-$p$ group, $\Delta$ is a pro-$p$ ring.
-                $F$ cannot be continuously embedded in $GL^1_2(\Delta)$, when $p>2$.
-            \end{theorem*}
+        \begin{frame}{Подход Зубкова}
+            \begin{theorem}[А.Н.\ Зубков, 1989]
+                \label{thm:Zubkov-main}
+                Некоммутативная свободная про-$p$ группа не может быть непрерывно вложена в $GL^1_2(\Delta)$ для $p\neq 2$.
+            \end{theorem}
 
-            The first non-trivial idea is to introduce the following definition:
-            \begin{definition}
-                Let $F$ be a free pro-$p$ group, and $G$ be a pro-$p$ group.
-                Then every $1\neq w\in F$ such that $w\in Ker(\varphi)$ for all continuous homomorphisms $\varphi: F\to G$ is called a pro-$p$ identity of G.
-            \end{definition}
-            Zubkov consider the natural homomorphism to algebra of generic matrices:\\
-            Let $x,y \in \widetilde{F}_p$~--- generators, $\pi: x \mapsto 1+x^*, y \mapsto 1+y^*$, where $x^*, y^*$ are the generic matrices over $\mathbb{Z}_p$.
-            And one can continue $\pi$ to the completion $\langle \langle x, y \rangle \rangle$, and it will map on closure of $\langle1+x^*, 1+y^*\rangle$.
+            Зубков рассматривает естественный гомоморфизм в алгебру общих матриц:\\
+            Пусть $x,y \in \widetilde{F}_p$~--- образующие, $\pi: x \mapsto 1+x^*, y \mapsto 1+y^*$, где $x^*, y^*$ общие матрицы $\mathbb{Z}_p$.
+            Можно продолжить $\pi$ на замыкание $\langle \langle x, y \rangle \rangle$, и оно отобразится на замыкание $\langle1+x^*, 1+y^*\rangle$.
         \end{frame}
 
         \begin{frame}{Zubkov's approach}
-            Homomorphism $\pi$ is called the universal representation, and that's why:
-            \begin{lemma}
-                Each $1\neq z \in \ker \pi$ is a pro-$p$ identity of $GL^1_d(\Delta)$ for all pro-$p$ rings $\Delta$.
-            \end{lemma}
-            This theorem can be proven with a standard commutative algebra approaches.
-            And this implies that it would be enough to prove
+            Гомоморфизм $\pi$ называется универсальным представлением:
+            \begin{theorem}[А.Н.\ Зубков, 1987]
+                \label{thm:zubkov-universal}
+                Пусть $F$ ~--- свободная про-$p$ группа порожденная $x, y$.
+                Если существует инъективный непрерывный гомоморфизм $\varphi: F \to GL^1_2(\Delta)$, то и универсальное представление $\pi$ инъективно.
+            \end{theorem}
+            
             \begin{theorem}
                 The universal representation of the degree $2$ is not injective for $p\neq 2$.
             \end{theorem}
