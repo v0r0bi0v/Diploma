@@ -461,13 +461,24 @@
             \end{remark}
         \end{frame}
 
-        \begin{frame}{Ключевые переходы}
+        \begin{frame}{Элементарные соображения}
             \begin{enumerate}
                 \item Можно выделить из многочлена его однородные компоненты, подействовав на многочлен подстановками $x_i\mapsto\lambda x_i$
                 \item Разрешим применять только такую последовательность операций, которая из однородного многочлена получает однородный
                 \item Можем считать, что изначальное множество замкнуто относительно однородных подстановок
-                \item
             \end{enumerate}
+        \end{frame}
+
+        \begin{frame}{Ключевая подстановка}
+            Следующая подстановка является ключевой:
+            \begin{equation}
+                \label{eq:key-sub}
+                P(x_1,\ldots,x_n)\mapsto P_{(t, 1)}\left(x_1+t(x_1)x_1,\ldots,x_n+t(x_n)x_n\right)
+            \end{equation}
+            \begin{equation}
+                \label{eq:key_monom}
+                x_1^{\alpha_1}\ldots x_n^{\alpha_n}\mapsto\sum\limits_{i=1}^n t(x_i)(\alpha_i\cdot x_1^{\alpha_1}\ldots x_n^{\alpha_n})
+            \end{equation}
         \end{frame}
 
 
