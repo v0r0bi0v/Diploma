@@ -290,7 +290,6 @@
                 \item $\LQ^{(n)}$ ~--- векторное пространство над $\Q_p$ однородных элементов степени $n$ в алгебре $\LQ$.
                 \item $\LZ^{(n)}$ ~---  $\Z_p$-модуль однородных элементов степени $n$ в алгебре $\LZ$.
                 \item Для $g\in 1 + \ker{(M_2(S) \to M_2(S / S_1))}$: $\min{g}$ ~--- однородная компонента наименьшей ненулевой степени (можно записать $g=1 + a_n + a_{n+1} + \ldots$)
-                \item Будем записывать коммутатор веса $n$ следующим образом $[l_1, \ldots, l_n] = [[l_1, l_2, \ldots, l_{n-1}], l_n]$
             \end{itemize}
         \end{frame}
         \begin{frame}{}
@@ -322,15 +321,24 @@
             Авторы изменяют универсальное представление Зубкова для случая $p=2$:
             аналогичный гомоморфизм в общие матрицы над $\mathbb{Z}/2\mathbb{Z}$ (вместо $\mathbb{Z}_2$).
 
-            Then the following lemma still holds and has a pretty simple proof:
+            Все так же верна следующая лемма об универсальности:
             \begin{lemma}
                 Each $1\neq z \in \ker \pi$ is a pro-$2$ identity of $GL^1_2(\Delta)$ for all pro-$2$ rings $\Delta$ with $\mathrm{char}\Delta=2$.
             \end{lemma}
-            And the last theorem has a very hard proof:
-            authors investigated Lie algebra using PI-theory approaches:
+            Однако, доказательство следующей теоремы оказывается весьма нетривиальным:
             \begin{theorem}
-                The universal representation of the degree $2$ is not injective.
+                Универсальное представление не инъективно
             \end{theorem}
+        \end{frame}
+
+        \begin{frame}{Редукция к псевдо-общим матрицам}
+            Авторы вводят новые матрицы $\tilde{X}, \tilde{Y}$, такие что $\det \tilde{X} = \det \tilde{Y} = 0$, называемые псевдо-общими (pseudo generic matrices), аналогичная идея встречается и в PI-теории.
+            Несложно показать, что $[G, G] = [\tilde{G}, \tilde{G}]$ и из этого следует, что достаточно доказать следующую теорему:
+            \vskip 0.1in\noindent
+            \begin{theorem}
+                Определим гомоморфизм $\tilde{\pi}$ из $F$ в $\tilde{G}$: $x\mapsto 1 + \tilde{X}, y\mapsto 1 + \tilde{Y}$, тогда ограничение $\tilde{\pi}: [F, F] \to [\tilde{G}, \tilde{G}]$ не инъективно.
+            \end{theorem}
+            \vskip 0.1in\noindent
         \end{frame}
 
         \begin{frame}{$\mathrm{char}\Delta = 4$}
