@@ -47,7 +47,7 @@
 \newcommand{\SQo}{\ensuremath{S_{\mathbb{Q}_p, 1}}}
 \newcommand{\trace}{\ensuremath{\mathrm{trace}}}
 
-
+\renewcommand{\width}{\ensuremath{\mathrm{width}}}
 \renewcommand{\L}{\ensuremath{\mathcal{L}}}
 \renewcommand{\char}{\ensuremath{\mathrm{char}}}
 
@@ -493,7 +493,7 @@
                 Пусть $M$ --- множество многочленов от $n$ переменных над нетеровым кольцом $R$, содержащем подкольцо изоморфное $\mathbb{Q}$.
                 Тогда $M$ конечно базируемо относительно линейных комбинаций и ключевых подстановок.
             \end{theorem}
-            Переход во многом основан на идеи рассмотрения \textit{ширины}:
+            Переход индукции во многом основан на идеи рассмотрения \textit{ширины}:
             \[\width(x_1^{\alpha_1}\cdot\ldots\cdot x_n^{\alpha_n}) = \alpha_2 + \ldots + \alpha_n\]
         \end{frame}
 
@@ -502,11 +502,11 @@
 
 
         \begin{frame}{Gelfand conjecture}
-            \begin{conjecture}[Gelfand, 1970, \cite{Ge1}]
+            \begin{conjecture}[Gelfand, 1970, \cite{Gelfand}]
                 The homology of the Lie subalgebra of finite codimension in the Lie algebra of algebraic vector fields on an affine algebraic manifold are finite-dimensional in each
                 homological degree.
             \end{conjecture}
-            We denote by $\mathcal{W}_n$ the Lie algebra of formal vector fields on an n-dimensional plane $V$.\\
+            Обозначим $\mathcal{W}_n$ алгебру Ли формальных векторных полей на $n$-мерном пространстве $V$.\\
             \[\mathcal{W}_n\simeq \prod\limits_{k=0}^{\infty}S^k V\otimes V^*\]
             The subalgebras $\prod\limits_{k=d}^{\infty}S^k V\otimes V^*$ of a finite codimension are denoted by $L_d(n)$.
         \end{frame}
