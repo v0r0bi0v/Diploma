@@ -156,10 +156,10 @@
 
 
         \begin{frame}
-            \titlepage % Print the title page as the first slide
+            \titlepage
         \end{frame}
 
-        \begin{frame}{Strucure of the work}
+        \begin{frame}{Структура работы}
             Мы рассмотрим два применения PI-теории:
             \begin{itemize}
                 \item Нелинейность свободных про-$p$ групп
@@ -179,7 +179,7 @@
             \end{enumerate}
         \end{frame}
 
-        \begin{frame}{Preliminaries}
+        \begin{frame}{Предварительные сведения}
             \begin{definition}
                 Обратный (проективный) предел проективной системы конечных групп называется проконечной группой.
             \end{definition}
@@ -193,7 +193,7 @@
 
 
         \end{frame}
-        \begin{frame}{Preliminaries}
+        \begin{frame}{Предварительные сведения}
             \begin{definition}
                 Пусть $F$ свободная группа порожденная алфавитом $\mathcal{S}$.
                 Рассмотрим пополнение $\widetilde{F}_p$ группы $F$ относительно топологии, определенной всеми нормальными подгруппами индекса $p^l$, $\forall l\in\mathbb{N}$.
@@ -212,7 +212,6 @@
                 Некоммутативная свободная про-$p$ группа $\widetilde{F}_p$ не может быть непрерывно вложена в $GL_d^1(\Delta)$ для любого про-$p$ кольца $\Delta$.
             \end{conjecture}
         \end{frame}
-
 
         \begin{frame}{Историческая справка}
             Существует множество частичных результатов для различных $\widetilde{F}_p, \Delta, p$, которые дают надежду на положительный результат и в общем случае:
@@ -268,7 +267,7 @@
             Можно продолжить $\pi$ на замыкание $\langle \langle x, y \rangle \rangle$, и оно отобразится на замыкание $\langle1+x^*, 1+y^*\rangle$.
         \end{frame}
 
-        \begin{frame}{Zubkov's approach}
+        \begin{frame}{Универсальное представление}
             Гомоморфизм $\pi$ называется универсальным представлением:
             \begin{theorem}[А.Н.\ Зубков, 1987]
                 \label{thm:zubkov-universal}
@@ -277,11 +276,11 @@
             \end{theorem}
 
             \begin{theorem}
-                Универсальное представление не инъективно.
+                Универсальное представление не инъективно для $p\neq 2$.
             \end{theorem}
         \end{frame}
 
-        \begin{frame}{Подход Зубкова}
+        \begin{frame}{Обозначения}
             Обозначения:
             \begin{itemize}
                 \item $\mathbf{S}$ ~--- кольцо степенных рядов от общих матриц $X, Y$ над $\Z_p$
@@ -293,13 +292,24 @@
                 \item Будем записывать коммутатор веса $n$ следующим образом $[l_1, \ldots, l_n] = [[l_1, l_2, \ldots, l_{n-1}], l_n]$
             \end{itemize}
         \end{frame}
-        \begin{frame}{Zubkov's approach}
-            Zubkov investigated the lower central series of Lie algebra of generic matrices.\\
-            And he encountered a contradiction with the classical Witt's formula:
-            \begin{formula}[Witt]
-                Rank of $r$-th factor of the lower central series of $\widetilde{F}_p$ (as a $\mathbb{Z}_p-module$):
-                \[\frac{1}{r}\sum\limits_{m \mid r} \mu(m) \cdot 2^{\frac{r}{m}}\]
-            \end{formula}
+        \begin{frame}{}
+            План доказательства
+            \begin{enumerate}
+                \item Определим $G\supseteq G^{(n)}$, вложенную последовательность нормальных подгрупп попадающую в любую окрестность единицы, такую что для любого $g\in G^{(n)}$
+                \[
+                    \min{g} \in \LQn\cap\Sbf = \LZn
+                \]
+                \item Таким образом, можно изучать $G^{(n)}/G^{(n+1)}$ как $\Z_p$-модуль $\LZn$.
+                Докажем, что $\rank_{\Z_p}{\LZn} = f(n)$ для некоторой $f$.
+                \item Доказав, что $G^{(n)}$ ~--- нижний центральный ряд $G$ получим противоречие с формулой Э.\ Витта (см. \cite{Lubotzky}):~\begin{proposition}[Э.\ Витт, \cite{Lubotzky}]
+                                                                                                                                                  \label{thm:Vitt}
+                                                                                                                                                  Пусть F ~--- свободная про-$p$ группа порожденная $m$ образующими, тогда $n$-ый фактор нижнего центрального ряда имеет ранг (как $\Z_p$-модуль)
+                                                                                                                                                  \[
+                                                                                                                                                      \frac{1}{n}\sum\limits_{d\mid n} \mu(d) m^{n / d}
+                                                                                                                                                  \]
+                                                                                                                                                  где $\mu$ ~--- функция Мебиуса.
+                \end{proposition}
+            \end{enumerate}
         \end{frame}
 
         \begin{frame}{Ben-Ezra, Zelmanov's approach}
