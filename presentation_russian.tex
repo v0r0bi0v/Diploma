@@ -542,7 +542,16 @@
             \[
                 \delta_p: p(x_1)\partial_1 + \ldots + p(x_n)\partial_n
             \]
+        \end{frame}
 
+        \begin{frame}{Исправление композиций}
+            Возникает тонкость: если последовательно применять векторные поля $\delta_p \circ \delta_q$,
+            то получится не то же самое, что $\sigma_p \circ \sigma_q$.
+            Однако это решается следующим образом:
+            \[
+                \delta_p \circ \delta_q (f) = \sigma_p \circ \sigma_q(f) - \sigma_{q'p} (f)
+            \]
+            Аналогичные комбинаторные рассуждения можно сделать для $\delta_{p_1}\circ\ldots\circ\delta_{p_k}$.
         \end{frame}
 
         \begin{frame}{Библиография}
