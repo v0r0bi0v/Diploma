@@ -338,26 +338,35 @@
         \end{frame}
 
         \begin{frame}{Кольцо псевдо-общих матриц}
-            Рассмотрим дискретное кольцо
-            \[
-                T = \quad \langle \trace(\tilde{X}),\quad  \trace(\tilde{Y}),\quad  \trace(\tilde{X}\tilde{Y}) \rangle
-            \]
-            Исследуя кольцо общих матриц полезным оказывается рассмотреть\\ $J$ ~--- $T$-модуль порожденный
-                $[\tilde{X}, \tilde{Y}] \tilde{X}, \quad [\tilde{X}, \tilde{Y}] \tilde{Y}, \quad [\tilde{X}, \tilde{Y}]^2, \quad [\tilde{X}, \tilde{Y}]\tilde{X}\tilde{Y}$
+            Авторы изучают кольца
+            \begin{align*}
+                & S = \quad \langle \trace(\tilde{X}),\quad \trace(\tilde{Y}),\quad [\tilde{X},\quad \tilde{Y}]^2 \rangle \quad \subseteq \tilde{S} \\
+                & T = \quad \langle \trace(\tilde{X}),\quad  \trace(\tilde{Y}),\quad  \trace(\tilde{X}\tilde{Y}) \rangle \quad \subseteq \tilde{S} \\
+                & R = \quad \langle \tilde{X},\quad  \tilde{Y},\quad  T \rangle
+            \end{align*}
+            И $T$-модуль $J$ порожденный
+            \[[\tilde{X}, \tilde{Y}] \tilde{X}, \quad [\tilde{X}, \tilde{Y}] \tilde{Y}, \quad [\tilde{X}, \tilde{Y}]^2, \quad [\tilde{X}, \tilde{Y}]\tilde{X}\tilde{Y}\]
 
-
-            \begin{proposition}
-                Каждый элемент $J$ единственным образом представляется в виде
-                \[
-                    \sum\limits_{n=0}^{\infty}\sum\limits_{i=0}^{\infty}
-                    u_{n,i} + v_{n,i} + w_{n,i}
-                \]
-                \begin{align*}
-                    & u_{n,i} \in (\trace(\tilde{X}))^n \cdot (\mathring{T}\cdot[\tilde{X}, \tilde{Y}]\tilde{X} + \mathring{T}\cdot[\tilde{X}, \tilde{Y}]\tilde{Y}) \\
-                    & v_{n,i} \in (\trace(\tilde{X}))^n \cdot \mathring{T} \cdot [\tilde{X}, \tilde{Y}]^2 \\
-                    & w_{n,i} \in (\trace(\tilde{X}))^n \cdot \mathring{T} \cdot [\tilde{X}, \tilde{Y}]\cdot \tilde{X} \cdot \tilde{Y}
-                \end{align*}
-            \end{proposition}
+%            Рассмотрим дискретное кольцо
+%            \[
+%                T = \quad \langle \trace(\tilde{X}),\quad  \trace(\tilde{Y}),\quad  \trace(\tilde{X}\tilde{Y}) \rangle
+%            \]
+%            Исследуя кольцо общих матриц полезным оказывается рассмотреть\\ $J$ ~--- $T$-модуль порожденный
+%                $[\tilde{X}, \tilde{Y}] \tilde{X}, \quad [\tilde{X}, \tilde{Y}] \tilde{Y}, \quad [\tilde{X}, \tilde{Y}]^2, \quad [\tilde{X}, \tilde{Y}]\tilde{X}\tilde{Y}$
+%
+%
+%            \begin{proposition}
+%                Каждый элемент $J$ единственным образом представляется в виде
+%                \[
+%                    \sum\limits_{n=0}^{\infty}\sum\limits_{i=0}^{\infty}
+%                    u_{n,i} + v_{n,i} + w_{n,i}
+%                \]
+%                \begin{align*}
+%                    & u_{n,i} \in (\trace(\tilde{X}))^n \cdot (\mathring{T}\cdot[\tilde{X}, \tilde{Y}]\tilde{X} + \mathring{T}\cdot[\tilde{X}, \tilde{Y}]\tilde{Y}) \\
+%                    & v_{n,i} \in (\trace(\tilde{X}))^n \cdot \mathring{T} \cdot [\tilde{X}, \tilde{Y}]^2 \\
+%                    & w_{n,i} \in (\trace(\tilde{X}))^n \cdot \mathring{T} \cdot [\tilde{X}, \tilde{Y}]\cdot \tilde{X} \cdot \tilde{Y}
+%                \end{align*}
+%            \end{proposition}
         \end{frame}
 
         \begin{frame}{$\mathrm{char}\Delta = 4$}
